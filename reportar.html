@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reportar | EcoAvista</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a class="logo" href="index.html">🌿 EcoAvista</a>
+    <nav>
+      <a href="index.html">Inicio</a><a href="buscar.html">Buscar</a><a href="mapa.html">Mapa</a><a href="especies.html">Especies</a><a href="lugares.html">Lugares</a><a class="activo" href="reportar.html">Reportar</a><a href="nosotros.html">Nosotros</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Reportar avistamiento</h1>
+    <p>Cuéntanos qué especie viste y dónde. Cada reporte será validado antes de publicarse.</p>
+    <div class="escena" aria-hidden="true">
+      <span class="s arbol">🌳</span><span class="s ave">🦜</span>
+      <span class="s perezoso">🦥</span><span class="s palma2">🌴</span><span class="s palma1">🌴</span>
+    </div>
+  </section>
+
+  <main class="contenedor">
+    <form class="formulario" action="index.html" method="get">
+      <label>Especie observada
+        <input type="text" name="especie" placeholder="Nombre de la especie" required>
+      </label>
+      <label>Lugar
+        <input type="text" name="lugar" placeholder="Parque, reserva o zona" required>
+      </label>
+      <label>Fecha
+        <input type="date" name="fecha">
+      </label>
+      <label>Descripción
+        <textarea name="descripcion" rows="4" placeholder="¿Qué viste? ¿Cuántos ejemplares?"></textarea>
+      </label>
+      <label>Foto (opcional)
+        <input type="file" name="foto" accept="image/*">
+      </label>
+      <button class="btn" type="submit">Enviar reporte 🌱</button>
+    </form>
+
+    <section class="caja">
+      <h2>✅ Validación</h2>
+      <p>Los reportes serán revisados para garantizar que la información sea confiable.</p>
+    </section>
+  </main>
+
+  <footer>🍃 EcoAvista · Proyecto Final de Ingeniería Ambiental · Grupo 3 · Panamá 🦜</footer>
+</body>
+</html>
