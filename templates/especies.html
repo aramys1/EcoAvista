@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Especies | EcoAvista{% endblock %}
+{% block hero %}<section class="hero hero-compact"><h1>Especies de Panamá</h1><p>Busca por nombre común o científico y filtra por categoría.</p><div class="escena" aria-hidden="true"><span class="s arbol">🌳</span><span class="s palma1">🌴</span></div></section>{% endblock %}
+{% block content %}
+<h2 class="titulo">Catálogo</h2>
+<form class="busqueda" method="get" action="{{ url_for('species_catalog') }}">
+  <label class="sr-only" for="q">Nombre común o científico</label><input id="q" name="q" type="search" value="{{ query }}" placeholder="Ej. espavé o Anacardium">
+  <label class="sr-only" for="categoria">Categoría</label><select id="categoria" name="categoria"><option value="">Todas las categorías</option><option value="flora" {% if category == 'flora' %}selected{% endif %}>Flora</option><option value="fauna" {% if category == 'fauna' %}selected{% endif %}>Fauna</option></select>
+  <button class="btn" type="submit">Aplicar filtros</button><a class="btn btn-secondary" href="{{ url_for('species_catalog') }}">Limpiar</a>
+</form>
+{% if fauna_empty %}<div class="caja notice"><h2>Fauna aún no cargada</h2><p>La carga inicial contiene especies de flora. No hay especies de fauna para mostrar todavía.</p></div>{% endif %}
+{% if species %}<p class="results-count">{{ species|length }} {{ 'resultado' if species|length == 1 else 'resultados' }}</p><div class="grid species-grid">
+  {% for item in species %}<a class="card species-card" href="{{ url_for('species_detail', species_id=item.id) }}"><div class="visual-neutral" aria-hidden="true">{% if item.categoria == 'Flora' %}🌿{% else %}🦋{% endif %}</div><span class="tag">{{ item.categoria }}</span><h3>{{ item.nombre_comun_es or 'Nombre común desconocido' }}</h3><p><i>{{ item.nombre_cientifico }}</i></p><p class="muted">Familia: {{ item.familia or 'Desconocida' }}</p></a>{% endfor %}
+</div>{% elif not fauna_empty %}<p class="empty-state">No encontramos especies con esos filtros. Prueba otro término o limpia la búsqueda.</p>{% endif %}
+{% endblock %}

@@ -55,7 +55,7 @@ def read_csv(filename):
 
 
 def value(row, key):
-    raw = row.get(key, "").strip()
+    raw = (row.get(key) or "").strip()
     return raw or None
 
 

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Consulta especies de flora y fauna de Panamá y explora lugares relacionados con ellas.">
+  <title>{% block title %}EcoAvista | Naturaleza de Panamá{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="cabecera">
+    <a class="logo" href="{{ url_for('index') }}" aria-label="EcoAvista, inicio">🌿 EcoAvista</a>
+    <nav aria-label="Navegación principal">
+      {% for endpoint, label in [('index', 'Inicio'), ('species_catalog', 'Especies'), ('map_page', 'Mapa'), ('places_catalog', 'Lugares'), ('about', 'Nosotros')] %}
+      <a href="{{ url_for(endpoint) }}" {% if request.endpoint == endpoint or (endpoint == 'species_catalog' and request.endpoint == 'species_detail') or (endpoint == 'places_catalog' and request.endpoint == 'place_detail') %}class="activo" aria-current="page"{% endif %}>{{ label }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+  {% block hero %}{% endblock %}
+  <main class="contenedor">{% block content %}{% endblock %}</main>
+  <footer><span>🍃 EcoAvista · Grupo 3 · Panamá</span><span>Consulta educativa con datos de fuentes identificadas.</span></footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
