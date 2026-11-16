@@ -1,0 +1,4 @@
+id_lugar,nombre,nombre_en_checklist,categoria_manejo,latitud,longitud,precision_ubicacion,fuente_area_id,fuente_coordenada_id
+L001,Altos de Campana,Campana National Park,Parque Nacional,8.713400,-79.963650,Coordenada referencial de localidad indicada por STRI; no representa entrada ni ubicación de cada especie.,F01,F02
+L002,Soberanía,Soberanía National Park Plants,Parque Nacional,9.105830,-79.651220,Coordenada referencial de localidad indicada por STRI; no representa entrada ni ubicación de cada especie.,F01,F03
+L003,Barro Colorado,Plants of Barro Colorado,Monumento Natural,,,Sin coordenadas incluidas en esta carga inicial.,F01,F04

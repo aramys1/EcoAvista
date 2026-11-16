@@ -1,0 +1,4 @@
+id_especie,nombre_cientifico,nombre_comun_es,grupo_taxonomico,familia,fuente_taxonomia_id
+E001,Anacardium excelsum,Espavé,Planta,Anacardiaceae,F05
+E002,Anacardium occidentale,Marañón,Planta,Anacardiaceae,F06
+E003,Spondias mombin,Jobo; jobo concho,Planta,Anacardiaceae,F07

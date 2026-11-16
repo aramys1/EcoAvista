@@ -1,0 +1,9 @@
+id_especie,id_lugar,tipo_relacion,fuente_id,nota
+E001,L002,incluida_en_checklist_local,F03,La lista del sitio incluye el taxón; no implica una coordenada individual ni presencia actual garantizada.
+E001,L003,incluida_en_checklist_local,F04,La lista del sitio incluye el taxón; no implica una coordenada individual ni presencia actual garantizada.
+E002,L001,incluida_en_checklist_local,F02,La lista del sitio incluye el taxón; no implica una coordenada individual ni presencia actual garantizada.
+E002,L002,incluida_en_checklist_local,F03,La lista del sitio incluye el taxón; no implica una coordenada individual ni presencia actual garantizada.
+E002,L003,incluida_en_checklist_local,F04,La lista del sitio incluye el taxón; no implica una coordenada individual ni presencia actual garantizada.
+E003,L001,incluida_en_checklist_local,F02,La lista del sitio incluye el taxón; no implica una coordenada individual ni presencia actual garantizada.
+E003,L002,incluida_en_checklist_local,F03,La lista del sitio incluye el taxón; no implica una coordenada individual ni presencia actual garantizada.
+E003,L003,incluida_en_checklist_local,F04,La lista del sitio incluye el taxón; no implica una coordenada individual ni presencia actual garantizada.
