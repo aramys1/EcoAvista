@@ -843,6 +843,143 @@ footer::before {
   color: var(--verde-osc);
 }
 
+.species-filters {
+  align-items: end;
+  gap: 10px;
+  padding: 16px;
+}
+
+.filter-search,
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--verde-osc);
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.filter-search {
+  flex: 1 1 190px;
+  min-width: 190px;
+}
+
+.filter-field {
+  flex: 1 1 145px;
+  min-width: 130px;
+}
+
+.filter-search input,
+.filter-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 8px 10px;
+  font-size: .85rem;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.filter-actions .btn {
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+.filter-hint {
+  margin: 12px 2px 18px;
+  color: #60786a;
+  font-size: .84rem;
+}
+
+.species-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.species-status .tag {
+  margin: 2px 3px 2px 0;
+  padding: 3px 9px;
+  font-size: .72rem;
+}
+
+.tag-status {
+  background: var(--azul-cl);
+  color: var(--azul-osc);
+}
+
+.tag-unknown {
+  background: #f2efdf;
+  color: #665b34;
+}
+
+.conservation-card {
+  display: grid;
+  gap: 14px;
+  margin: 16px 0 28px;
+  padding: 20px;
+  background: var(--verde-bg);
+  border: 1px solid var(--verde-cl);
+  border-left: 5px solid var(--verde);
+  border-radius: 7px 26px;
+}
+
+.national-card {
+  background: #f5f9fc;
+  border-color: var(--azul-cl);
+  border-left-color: var(--azul);
+}
+
+.conservation-value {
+  display: block;
+  margin: 3px 0 8px;
+  color: var(--verde-osc);
+  font-size: 1.2rem;
+}
+
+.tag-threat {
+  background: #f7dfdc;
+  color: #87352b;
+}
+
+.tag-safe {
+  background: #e2f1df;
+  color: #285c32;
+}
+
+.conservation-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.conservation-meta dt {
+  color: var(--verde-osc);
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.conservation-meta dd {
+  margin-top: 3px;
+  font-size: .9rem;
+  overflow-wrap: anywhere;
+}
+
+.conservation-card > p {
+  font-size: .82rem;
+}
+
+.conservation-card a {
+  color: var(--azul-osc);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 @media (max-width: 760px) {
   .cabecera {
     justify-content: center;
@@ -893,6 +1030,26 @@ footer::before {
 
   .related-list li {
     flex-direction: column;
+  }
+
+  .species-filters {
+    padding: 14px;
+  }
+
+  .filter-search {
+    flex-basis: 100%;
+  }
+
+  .filter-field {
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  .filter-actions {
+    width: 100%;
+  }
+
+  .filter-actions .btn {
+    flex: 1;
   }
 
   .map-live {

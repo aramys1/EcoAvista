@@ -25,7 +25,14 @@ CREATE TABLE IF NOT EXISTS especies (
     nombre_comun_es TEXT,
     grupo_taxonomico TEXT,
     familia TEXT,
-    fuente_taxonomia_id TEXT REFERENCES fuentes(id)
+    fuente_taxonomia_id TEXT REFERENCES fuentes(id),
+    grupo_biologico TEXT,
+    iucn_categoria TEXT,
+    iucn_anio_evaluacion INTEGER,
+    fuente_iucn_id TEXT REFERENCES fuentes(id),
+    estado_lista_panama TEXT,
+    anio_lista_panama INTEGER,
+    fuente_lista_panama_id TEXT REFERENCES fuentes(id)
 );
 CREATE TABLE IF NOT EXISTS lugares (
     id TEXT PRIMARY KEY,
@@ -47,6 +54,16 @@ CREATE TABLE IF NOT EXISTS especies_lugares (
     PRIMARY KEY (id_especie, id_lugar)
 );
 """
+
+SPECIES_MIGRATIONS = {
+    "grupo_biologico": "TEXT",
+    "iucn_categoria": "TEXT",
+    "iucn_anio_evaluacion": "INTEGER",
+    "fuente_iucn_id": "TEXT REFERENCES fuentes(id)",
+    "estado_lista_panama": "TEXT",
+    "anio_lista_panama": "INTEGER",
+    "fuente_lista_panama_id": "TEXT REFERENCES fuentes(id)",
+}
 
 
 def read_csv(filename):
@@ -76,10 +93,20 @@ def import_rows(connection, table, columns, rows, id_columns):
     )
 
 
+def migrate_species(connection):
+    existing = {
+        row[1] for row in connection.execute("PRAGMA table_info(especies)")
+    }
+    for column, definition in SPECIES_MIGRATIONS.items():
+        if column not in existing:
+            connection.execute(f"ALTER TABLE especies ADD COLUMN {column} {definition}")
+
+
 def initialize_database():
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     with sqlite3.connect(DB_PATH) as connection:
         connection.executescript(SCHEMA)
+        migrate_species(connection)
         import_rows(
             connection,
             "fuentes",
@@ -93,7 +120,7 @@ def initialize_database():
         import_rows(
             connection,
             "especies",
-            ["id", "nombre_cientifico", "nombre_comun_es", "grupo_taxonomico", "familia", "fuente_taxonomia_id"],
+            ["id", "nombre_cientifico", "nombre_comun_es", "grupo_taxonomico", "familia", "fuente_taxonomia_id", "grupo_biologico", "iucn_categoria", "iucn_anio_evaluacion", "fuente_iucn_id", "estado_lista_panama", "anio_lista_panama", "fuente_lista_panama_id"],
             [
                 {**row, "id": row["id_especie"]}
                 for row in read_csv("especies.csv")

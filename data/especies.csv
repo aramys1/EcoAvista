@@ -1,4 +1,4 @@
-id_especie,nombre_cientifico,nombre_comun_es,grupo_taxonomico,familia,fuente_taxonomia_id
-E001,Anacardium excelsum,Espavé,Planta,Anacardiaceae,F05
-E002,Anacardium occidentale,Marañón,Planta,Anacardiaceae,F06
-E003,Spondias mombin,Jobo; jobo concho,Planta,Anacardiaceae,F07
+id_especie,nombre_cientifico,nombre_comun_es,grupo_taxonomico,familia,fuente_taxonomia_id,grupo_biologico,iucn_categoria,iucn_anio_evaluacion,fuente_iucn_id,estado_lista_panama,anio_lista_panama,fuente_lista_panama_id
+E001,Anacardium excelsum,Espavé,Planta,Anacardiaceae,F05,,LC,2023,F08,Sin dato,,F11
+E002,Anacardium occidentale,Marañón,Planta,Anacardiaceae,F06,,LC,2021,F09,Sin dato,,F11
+E003,Spondias mombin,Jobo; jobo concho,Planta,Anacardiaceae,F07,,LC,2018,F10,Sin dato,,F11

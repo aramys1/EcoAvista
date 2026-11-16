@@ -7,6 +7,25 @@ from init_db import DB_PATH
 
 app = Flask(__name__)
 app.config["DATABASE"] = DB_PATH
+SPECIES_GROUPS = {
+    "aves": "Aves",
+    "mamiferos": "Mamíferos",
+    "reptiles": "Reptiles",
+    "anfibios": "Anfibios",
+    "peces": "Peces",
+    "invertebrados": "Invertebrados",
+}
+IUCN_LABELS = {
+    "EX": "Extinta",
+    "EW": "Extinta en Estado Silvestre",
+    "CR": "En Peligro Crítico",
+    "EN": "En Peligro",
+    "VU": "Vulnerable",
+    "NT": "Casi Amenazada",
+    "LC": "Preocupación Menor",
+    "DD": "Datos Insuficientes",
+    "NE": "No Evaluada",
+}
 
 
 def get_db():
@@ -28,9 +47,7 @@ def category_name(taxon):
     return "Flora" if taxon == "Planta" else "Fauna"
 
 
-def species_query():
-    search = request.args.get("q", "").strip()
-    category = request.args.get("categoria", "").strip().lower()
+def species_query(search, category, group, iucn_category, national_status):
     clauses = []
     parameters = []
     if search:
@@ -40,12 +57,43 @@ def species_query():
     if category in {"flora", "fauna"}:
         clauses.append("LOWER(grupo_taxonomico) = ?")
         parameters.append("planta" if category == "flora" else "fauna")
+    if group in SPECIES_GROUPS:
+        clauses.append("grupo_biologico = ?")
+        parameters.append(group)
+    if iucn_category in {*IUCN_LABELS, "sin_dato"}:
+        if iucn_category == "sin_dato":
+            clauses.append("iucn_categoria IS NULL")
+        else:
+            clauses.append("iucn_categoria = ?")
+            parameters.append(iucn_category)
+    if national_status in {"incluida", "no_incluida", "sin_dato"}:
+        national_value = {
+            "incluida": "Incluida",
+            "no_incluida": "No incluida",
+            "sin_dato": "Sin dato",
+        }[national_status]
+        clauses.append("estado_lista_panama = ?")
+        parameters.append(national_value)
     sql = "SELECT * FROM especies"
     if clauses:
         sql += " WHERE " + " AND ".join(clauses)
     sql += " ORDER BY nombre_comun_es, nombre_cientifico"
     rows = get_db().execute(sql, parameters).fetchall()
     return [dict(row, categoria=category_name(row["grupo_taxonomico"])) for row in rows]
+
+
+def species_filter_counts():
+    counts = {key: 0 for key in SPECIES_GROUPS}
+    counts.update(
+        {
+            row["grupo_biologico"]: row["cantidad"]
+            for row in get_db().execute(
+                "SELECT grupo_biologico, COUNT(*) AS cantidad FROM especies "
+                "WHERE grupo_biologico IS NOT NULL GROUP BY grupo_biologico"
+            )
+        }
+    )
+    return counts
 
 
 def get_sources():
@@ -73,13 +121,27 @@ def index():
 
 @app.route("/especies")
 def species_catalog():
-    species = species_query()
+    search = request.args.get("q", "").strip()
+    category = request.args.get("categoria", "").strip().lower()
+    group = request.args.get("grupo", "").strip().lower()
+    iucn_category = request.args.get("iucn", "").strip().lower()
+    if iucn_category != "sin_dato":
+        iucn_category = iucn_category.upper()
+    national_status = request.args.get("lista_panama", "").strip().lower()
+    species = species_query(search, category, group, iucn_category, national_status)
+    group_counts = species_filter_counts()
     return render_template(
         "especies.html",
         species=species,
-        query=request.args.get("q", "").strip(),
-        category=request.args.get("categoria", ""),
-        fauna_empty=request.args.get("categoria", "").lower() == "fauna" and not species,
+        query=search,
+        category=category,
+        group=group,
+        group_counts=group_counts,
+        group_labels=SPECIES_GROUPS,
+        iucn_category=iucn_category.lower(),
+        national_status=national_status,
+        fauna_empty=category == "fauna" and not species,
+        group_empty=group in SPECIES_GROUPS and group_counts[group] == 0,
     )
 
 
@@ -88,8 +150,12 @@ def species_detail(species_id):
     database = get_db()
     species = database.execute(
         "SELECT s.*, f.titulo AS fuente_titulo, f.url AS fuente_url, "
-        "f.nota_metodologica AS fuente_nota FROM especies s "
-        "LEFT JOIN fuentes f ON f.id=s.fuente_taxonomia_id WHERE s.id=?",
+        "f.nota_metodologica AS fuente_nota, fi.titulo AS fuente_iucn_titulo, "
+        "fi.url AS fuente_iucn_url, fp.titulo AS fuente_panama_titulo, "
+        "fp.url AS fuente_panama_url FROM especies s "
+        "LEFT JOIN fuentes f ON f.id=s.fuente_taxonomia_id "
+        "LEFT JOIN fuentes fi ON fi.id=s.fuente_iucn_id "
+        "LEFT JOIN fuentes fp ON fp.id=s.fuente_lista_panama_id WHERE s.id=?",
         (species_id,),
     ).fetchone()
     if species is None:
@@ -106,6 +172,9 @@ def species_detail(species_id):
         "especie_detalle.html",
         species=species,
         category=category_name(species["grupo_taxonomico"]),
+        group_label=SPECIES_GROUPS.get(species["grupo_biologico"], "Sin dato"),
+        iucn_label=IUCN_LABELS.get(species["iucn_categoria"], "Sin dato"),
+        iucn_threatened=species["iucn_categoria"] in {"VU", "EN", "CR"},
         locations=locations,
         unlocated=[place for place in locations if place["latitud"] is None or place["longitud"] is None],
     )
