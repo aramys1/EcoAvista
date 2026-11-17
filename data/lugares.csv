@@ -1,4 +1,86 @@
-id_lugar,nombre,nombre_en_checklist,categoria_manejo,latitud,longitud,precision_ubicacion,fuente_area_id,fuente_coordenada_id
-L001,Altos de Campana,Campana National Park,Parque Nacional,8.713400,-79.963650,Coordenada referencial de localidad indicada por STRI; no representa entrada ni ubicación de cada especie.,F01,F02
-L002,Soberanía,Soberanía National Park Plants,Parque Nacional,9.105830,-79.651220,Coordenada referencial de localidad indicada por STRI; no representa entrada ni ubicación de cada especie.,F01,F03
-L003,Barro Colorado,Plants of Barro Colorado,Monumento Natural,,,Sin coordenadas incluidas en esta carga inicial.,F01,F04
+﻿id_lugar,nombre,nombre_en_checklist,categoria_manejo,latitud,longitud,precision_ubicacion,fuente_area_id,fuente_coordenada_id,id_miambiente
+L_MA_080,Alto Darién,,Bosque Protector,,,,F01,,80
+L001,Altos de Campana,Campana National Park,Parque Nacional,8.713400,-79.963650,Coordenada referencial de localidad indicada por STRI; no representa cada especie ni una entrada.,F01,F02,73
+L_MA_088,Área Silvestre Protegida (Caribe),,Área Silvestre Protegida,,,,F01,,88
+L_MA_087,Área Silvestre Protegida (Pacífico),,Área Silvestre Protegida,,,,F01,,87
+L_MA_013,Bahía de Chame,,Área de Uso Múltiple,,,,F01,,13
+L_MA_086,Banco Volcán,,Área de Recursos Manejados,,,,F01,,86
+L003,Barro Colorado,Plants/Animal inventories of Barro Colorado,Monumento Natural,,,,F01,,56
+L_MA_027,Camino de Cruces,,Parque Nacional,,,,F01,,27
+L_MA_034,Cerrezuela,,Reserva Hídrica,,,,F01,,34
+L_MA_083,Cerro Ancón,,Área Protegida y Reserva Natural,,,,F01,,83
+L_MA_036,Cerro Caraiguana,,Reserva Hídrica,,,,F01,,36
+L_MA_035,Cerro Gaital,,Monumento Natural,,,,F01,,35
+L_MA_043,Cerro Guacamaya,,Reserva Hídrica,,,,F01,,43
+L_MA_063,Cerro Hoya,,Parque Nacional,,,,F01,,63
+L_MA_051,Chagres,,Parque Nacional,,,,F01,,51
+L_MA_029,Chepigana,,Reserva Forestal,,,,F01,,29
+L_MA_033,Ciénaga de Las Macanas,,Área de Recursos Manejados,,,,F01,,33
+L_MA_003,Ciénega El Mangle,,Refugio de Vida Silvestre,,,,F01,,3
+L_MA_017,Coiba,,Zona Especial de Protección Marina,,,,F01,,17
+L004,Coiba,Coiba Island species lists,Parque Nacional,,,,F01,,16
+L_MA_022,Cordillera de Coiba,,Área de Recursos Manejados,,,,F01,,22
+L_MA_023,Cuenca Alta del Río Pacora,,Reserva Hidrológica,,,,F01,,23
+L_MA_090,Cuenca del Río Santa María,,Reserva Hidrológica,,,,F01,,90
+L_MA_010,Damani-Guariviara,,Humedal de Importancia Internacional,,,,F01,,10
+L_MA_004,Darién,,Parque Nacional,,,,F01,,4
+L_MA_084,Donoso y Omar Torrijos Herrera,,Área de Recursos Manejados,,,,F01,,84
+L_MA_068,El Montuoso,,Reserva Forestal,,,,F01,,68
+L_MA_012,El Salto de Las Palmas,,Área Recreativa,,,,F01,,12
+L_MA_011,Escudo de Veraguas,,Paisaje Protegido,,,,F01,,11
+L_MA_085,Filo del Tallo-Canglón,,Reserva Hidrológica,,,,F01,,85
+L_MA_049,Fortuna,,Reserva Forestal,,,,F01,,49
+L_MA_070,General de División Omar Torrijos Herrera,,Parque Nacional,,,,F01,,70
+L_MA_020,Golfo de Chiriquí,,Parque Nacional,,,,F01,,20
+L_MA_015,Golfo de Montijo,,Área de Recursos Manejados,,,,F01,,15
+L_MA_007,Humedal de Bahía de Panamá,,Refugio de Vida Silvestre,,,,F01,,7
+L_MA_040,Isla Bastimentos,,Parque Nacional,,,,F01,,40
+L_MA_014,Isla Boná,,Refugio de Vida Silvestre,,,,F01,,14
+L_MA_030,Isla de Cañas,,Refugio de Vida Silvestre,,,,F01,,30
+L_MA_059,Isla del Rey,,Reserva Hidrológica,,,,F01,,59
+L_MA_037,Isla Galeta,,Paisaje Protegido,,,,F01,,37
+L_MA_062,Isla Iguana,,Refugio de Vida Silvestre,,,,F01,,62
+L_MA_018,Isla Montuosa,,Refugio de Vida Silvestre,,,,F01,,18
+L_MA_050,"Islas Advent, Zorra y Juan Gallego",,Área Silvestre Protegida,,,,F01,,50
+L_MA_077,La Amistad,,Parque Internacional,,,,F01,,77
+L_MA_075,La Amistad y Palo Seco,,Parque Nacional y Bosque Protector,,,,F01,,75
+L_MA_078,La Amistad y Volcán Barú,,Parque Nacional,,,,F01,,78
+L_MA_039,La Marinera,,Zona de Reserva,,,,F01,,39
+L_MA_019,La Playa de la Barqueta Agrícola,,Refugio de Vida Silvestre,,,,F01,,19
+L_MA_038,La Tronosa,,Reserva Forestal,,,,F01,,38
+L_MA_047,La Yeguada,,Reserva Forestal,,,,F01,,47
+L_MA_061,Lago Gatún,,Área Recreativa,,,,F01,,61
+L_MA_044,Lago Gatún,,Área Recreativa,,,,F01,,44
+L_MA_021,Laguna de Volcán,,Humedal,,,,F01,,21
+L_MA_048,Los Pozos de Calobre,,Monumento Natural,,,,F01,,48
+L_MA_008,Majé,,Reserva Hidrológica,,,,F01,,8
+L_MA_026,Manglares de Panamá Viejo,,Reserva Marino Costera,,,,F01,,26
+L_MA_041,Matumbal,,Zona de Reserva,,,,F01,,41
+L_MA_055,Micro Cuenca del Río Cacao,,Reserva Hidrológica,,,,F01,,55
+L_MA_006,Narganá,,Área Silvestre,,,,F01,,6
+L_MA_031,Pablo Arturo Barrios,,Refugio de Vida Silvestre,,,,F01,,31
+L_MA_076,Palo Seco,,Bosque Protector,,,,F01,,76
+L_MA_028,Parque Natural Metropolitano,,Paisaje Protegido,,,,F01,,28
+L_MA_065,Peñón de La Honda,,Refugio de Vida Silvestre,,,,F01,,65
+L_MA_042,Playa Bluff,,Reserva Natural Municipal,,,,F01,,42
+L_MA_046,Playa Boca Vieja,,Refugio de Vida Silvestre,,,,F01,,46
+L_MA_052,Portobelo,,Parque Nacional,,,,F01,,52
+L_MA_064,Punta Bruja y Dejal,,Paisaje Protegido,,,,F01,,64
+L_MA_045,Punta Patiño,,Humedal de Importancia Internacional,,,,F01,,45
+L_MA_069,Reverendo Padre Jesús Héctor Gallego Herrera,,Parque Nacional,,,,F01,,69
+L_MA_060,San Lorenzo,,Bosque Protector,,,,F01,,60
+L_MA_074,San Lorenzo,,Paisaje Protegido,,,,F01,,74
+L_MA_024,San San Pond Sak,,Humedal de Importancia Internacional,,,,F01,,24
+L_MA_089,Santa Fe,,Parque Nacional,,,,F01,,89
+L_MA_032,Sarigua,,Parque Nacional,,,,F01,,32
+L_MA_081,Serranía de Bagre,,Corredor Biológico,,,,F01,,81
+L_MA_005,Serranía de Darién,,Reserva Hidrológica,,,,F01,,5
+L_MA_009,Sistemas de Humedales de Matusagaratí,,Refugio de Vida Silvestre,,,,F01,,9
+L002,Soberanía,Soberanía National Park Plants,Parque Nacional,9.105830,-79.651220,Coordenada referencial de localidad indicada por STRI; no representa cada especie ni una entrada.,F01,F03,53
+L_MA_054,Subcuenca del Río Mensabé,,Área de Uso Múltiple,,,,F01,,54
+L_MA_025,Taboga-Urabá,,Refugio de Vida Silvestre,,,,F01,,25
+L_MA_082,Tapagra,,Zona de Protección Hidrológica,,,,F01,,82
+L_MA_001,Tonosí,,Reserva Forestal,,,,F01,,1
+L_MA_079,Volcan Barú,,Parque Nacional,,,,F01,,79
+L_MA_067,Zona Litoral del Corregimiento de El Espinal,,Área Protegida,,,,F01,,67
+L_MA_066,Zona Litoral del Corregimiento de La Enea,,Área Protegida,,,,F01,,66

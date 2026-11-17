@@ -20,7 +20,7 @@
   <a class="card" href="{{ url_for('map_page') }}"><span class="ico" aria-hidden="true">🗺️</span><h3>Ver el mapa</h3><p>Explora localidades con coordenadas de referencia.</p></a>
   <a class="card" href="{{ url_for('places_catalog') }}"><span class="ico" aria-hidden="true">🏞️</span><h3>Explorar lugares</h3><p>Consulta los lugares asociados y los datos disponibles.</p></a>
 </div>
-<section class="banda"><div class="blob" aria-hidden="true">🌳 🦜 🌿</div><div><h2>Una primera carga documentada</h2><p>El catálogo inicial reúne {{ counts.especies }} especies y {{ counts.lugares }} lugares a partir de referencias taxonómicas, checklists e información geográfica identificada.</p><a class="btn" href="{{ url_for('about') }}">Conoce el método</a></div></section>
+<section class="banda"><div class="blob" aria-hidden="true">🌳 🦜 🌿</div><div><h2>Un catálogo documentado</h2><p>El catálogo reúne {{ counts.especies }} especies y {{ counts.lugares }} lugares a partir de referencias taxonómicas, checklists e información geográfica identificada.</p><a class="btn" href="{{ url_for('about') }}">Conoce el método</a></div></section>
 <section class="section-block"><h2 class="titulo">Especies del catálogo</h2><div class="grid">
   {% for item in species %}<a class="card" href="{{ url_for('species_detail', species_id=item.id) }}"><span class="ico" aria-hidden="true">🌿</span><span class="tag">Flora</span><h3>{{ item.nombre_comun_es or 'Nombre común desconocido' }}</h3><p><i>{{ item.nombre_cientifico }}</i></p></a>{% endfor %}
 </div></section>
