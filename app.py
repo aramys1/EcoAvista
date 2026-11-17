@@ -2,7 +2,7 @@ import sqlite3
 
 from flask import Flask, abort, g, render_template, request, url_for
 
-from init_db import DB_PATH
+from init_db import DB_PATH, ROOT
 
 
 app = Flask(__name__)
@@ -88,11 +88,39 @@ def get_sources():
     return get_db().execute("SELECT * FROM fuentes ORDER BY id").fetchall()
 
 
+@app.context_processor
+def image_registry():
+    registries = []
+    for table, key in [("imagenes_especies", "id_especie"), ("imagenes_lugares", "id_lugar")]:
+        registry = {}
+        for row in get_db().execute(f"SELECT * FROM {table}"):
+            image = dict(row)
+            image["src"] = None
+            if image["estado"] == "verificada":
+                path = image["archivo"]
+                image["src"] = url_for("static", filename=path) if path and (ROOT / "static" / path).is_file() else image["imagen_url"]
+            registry[row[key]] = image
+        registries.append(registry)
+    return {"images": registries[0], "place_images": registries[1]}
+
+
+def coordinate_type(place):
+    if place["latitud"] is None or place["longitud"] is None:
+        return "Sin coordenadas"
+    if place["fuente_coordenada_id"] == "F01":
+        return "Centroide aproximado · MiAMBIENTE"
+    return "Referencia de localidad · STRI"
+
+
+app.jinja_env.globals["coordinate_type"] = coordinate_type
+
+
 @app.route("/")
 def index():
     database = get_db()
     species = database.execute(
-        "SELECT * FROM especies ORDER BY nombre_comun_es LIMIT 3"
+        "SELECT s.* FROM especies s JOIN imagenes_especies i ON i.id_especie=s.id "
+        "WHERE i.estado='verificada' ORDER BY s.grupo_taxonomico, s.nombre_cientifico LIMIT 6"
     ).fetchall()
     counts = {
         "especies": database.execute("SELECT COUNT(*) FROM especies").fetchone()[0],
@@ -172,47 +200,38 @@ def map_page():
     database = get_db()
     species = database.execute("SELECT id, nombre_comun_es, nombre_cientifico FROM especies ORDER BY nombre_comun_es").fetchall()
     species_id = request.args.get("especie", "").strip()
-    access = request.args.get("acceso", "").strip().lower()
-    clauses = ["l.latitud IS NOT NULL", "l.longitud IS NOT NULL"]
+    clauses = ["1=1"]
     parameters = []
     if species_id:
         clauses.append("EXISTS (SELECT 1 FROM especies_lugares el WHERE el.id_lugar=l.id AND el.id_especie=?)")
         parameters.append(species_id)
-    places = database.execute(
+    related_places = database.execute(
         "SELECT l.* FROM lugares l WHERE " + " AND ".join(clauses) + " ORDER BY l.nombre",
         parameters,
     ).fetchall()
-    if access in {"confirmado", "desconocido"}:
-        # No access field is present in this initial source data, so every place is unknown.
-        places = places if access == "desconocido" else []
-    unlocated = []
-    if species_id:
-        unlocated = database.execute(
-            "SELECT l.id,l.nombre FROM especies_lugares el JOIN lugares l ON l.id=el.id_lugar "
-            "WHERE el.id_especie=? AND (l.latitud IS NULL OR l.longitud IS NULL) ORDER BY l.nombre",
-            (species_id,),
-        ).fetchall()
+    places = [row for row in related_places if row["latitud"] is not None and row["longitud"] is not None]
+    unlocated = [row for row in related_places if row["latitud"] is None or row["longitud"] is None]
     selected_species = next((row for row in species if row["id"] == species_id), None)
     return render_template(
         "mapa.html",
         species=species,
         selected_species=species_id,
-        selected_access=access,
         places=places,
+        related_places=related_places,
         unlocated=unlocated,
-        map_points=[{"lat": row["latitud"], "lng": row["longitud"], "name": row["nombre"], "url": url_for("place_detail", place_id=row["id"])} for row in places],
-        selected_species_name=selected_species["nombre_comun_es"] if selected_species else None,
+        map_points=[{"lat": row["latitud"], "lng": row["longitud"], "name": row["nombre"], "category": row["categoria_manejo"], "coordinateType": coordinate_type(row), "centroid": row["fuente_coordenada_id"] == "F01", "url": url_for("place_detail", place_id=row["id"])} for row in places],
+        selected_species_name=(selected_species["nombre_comun_es"] or selected_species["nombre_cientifico"]) if selected_species else None,
     )
 
 
 @app.route("/lugares")
 def places_catalog():
-    access = request.args.get("acceso", "").strip().lower()
     database = get_db()
-    places = database.execute("SELECT * FROM lugares ORDER BY nombre").fetchall()
-    if access == "confirmado":
-        places = []
-    return render_template("lugares.html", places=places, access=access)
+    places = database.execute(
+        "SELECT l.*, (SELECT COUNT(DISTINCT el.id_especie) FROM especies_lugares el "
+        "WHERE el.id_lugar=l.id) AS species_count FROM lugares l ORDER BY nombre"
+    ).fetchall()
+    return render_template("lugares.html", places=places, checklist_count=sum(row["species_count"] > 0 for row in places))
 
 
 @app.route("/lugares/<place_id>")

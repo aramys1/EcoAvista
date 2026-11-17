@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_species_visual.html" import visual, credit %}
 {% block title %}{{ species.nombre_comun_es or species.nombre_cientifico }} | EcoAvista{% endblock %}
 {% block hero %}<section class="hero hero-compact"><p class="eyebrow">Ficha de especie · {{ category }}</p><h1>{{ species.nombre_comun_es or species.nombre_cientifico }}</h1><p><i>{{ species.nombre_cientifico }}</i></p><div class="escena" aria-hidden="true"><span class="s arbol">🌳</span><span class="s palma1">🌴</span></div></section>{% endblock %}
 {% block content %}
@@ -12,5 +13,5 @@
 <h2 class="titulo">Lugares relacionados</h2>
 {% if locations %}<ul class="related-list">{% for place in locations %}<li><div><a href="{{ url_for('place_detail', place_id=place.id) }}"><strong>{{ place.nombre }}</strong></a><p>Incluida en el checklist de este lugar. {{ place.nota_relacion }}</p>{% if place.fuente_titulo %}<p class="source-line">Fuente: <a href="{{ place.fuente_url }}" target="_blank" rel="noopener">{{ place.fuente_titulo }}</a></p>{% endif %}</div><span class="tag">Checklist local</span></li>{% endfor %}</ul>{% else %}<p>No hay lugares relacionados en los datos cargados.</p>{% endif %}
 {% if unlocated %}<p class="caution">{{ unlocated|length }} lugar relacionado no tiene coordenadas en esta carga y no aparecerá en el mapa.</p>{% endif %}
-</div><aside class="detail-aside"><div class="visual-neutral large" aria-hidden="true">🌿</div><p class="muted">Recurso visual neutro: no se proporcionó una imagen con fuente confirmada.</p><a class="btn" href="{{ url_for('map_page', especie=species.id) }}">Ver lugares en el mapa</a></aside></section>
+</div><aside class="detail-aside">{{ visual(species, images, true) }}{{ credit(images.get(species.id)) }}<a class="btn" href="{{ url_for('map_page', especie=species.id) }}">Ver lugares en el mapa</a></aside></section>
 {% endblock %}

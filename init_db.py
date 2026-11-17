@@ -51,7 +51,35 @@ CREATE TABLE IF NOT EXISTS especies_lugares (
     fuente_id TEXT REFERENCES fuentes(id),
     taxon_id_stri TEXT,
     nota TEXT,
-    PRIMARY KEY (id_especie, id_lugar)
+    PRIMARY KEY (id_especie, id_lugar, fuente_id)
+);
+CREATE TABLE IF NOT EXISTS imagenes_especies (
+    id_especie TEXT PRIMARY KEY REFERENCES especies(id) ON DELETE CASCADE,
+    nombre_cientifico TEXT NOT NULL,
+    nombre_confirmado TEXT,
+    imagen_url TEXT,
+    archivo TEXT,
+    estado TEXT NOT NULL CHECK (estado IN ('verificada', 'pendiente')),
+    fuente_url TEXT,
+    autor TEXT,
+    licencia TEXT,
+    licencia_url TEXT,
+    nota TEXT,
+    fecha_verificacion TEXT
+);
+CREATE TABLE IF NOT EXISTS imagenes_lugares (
+    id_lugar TEXT PRIMARY KEY REFERENCES lugares(id) ON DELETE CASCADE,
+    nombre TEXT NOT NULL,
+    nombre_confirmado TEXT,
+    imagen_url TEXT,
+    archivo TEXT,
+    estado TEXT NOT NULL CHECK (estado IN ('verificada', 'pendiente')),
+    fuente_url TEXT,
+    autor TEXT,
+    licencia TEXT,
+    licencia_url TEXT,
+    nota TEXT,
+    fecha_verificacion TEXT
 );
 """
 
@@ -96,11 +124,36 @@ def import_rows(connection, table, columns, rows, id_columns):
 
 
 def migrate_tables(connection):
+    for table, key, name in [("imagenes_especies", "id_especie", "nombre_cientifico"), ("imagenes_lugares", "id_lugar", "nombre")]:
+        existing = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
+        if "estado" not in existing:
+            connection.execute(f"ALTER TABLE {table} RENAME TO {table}_anterior")
+            statement = SCHEMA.split(f"CREATE TABLE IF NOT EXISTS {table} (")[1].split(";")[0]
+            connection.execute(f"CREATE TABLE {table} (" + statement)
+            source = "fuente_url" if "fuente_url" in existing else "fuente"
+            connection.execute(
+                f"INSERT INTO {table} ({key}, {name}, estado, fuente_url, autor, licencia, licencia_url, nota) "
+                f"SELECT {key}, {name}, 'pendiente', {source}, autor, licencia, licencia_url, nota FROM {table}_anterior"
+            )
+            connection.execute(f"DROP TABLE {table}_anterior")
     for table, migrations in TABLE_MIGRATIONS.items():
         existing = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
         for column, definition in migrations.items():
             if column not in existing:
                 connection.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
+    primary_key = [
+        row[1] for row in sorted(connection.execute("PRAGMA table_info(especies_lugares)"), key=lambda row: row[5])
+        if row[5]
+    ]
+    if primary_key != ["id_especie", "id_lugar", "fuente_id"]:
+        connection.execute("ALTER TABLE especies_lugares RENAME TO especies_lugares_anterior")
+        statement = SCHEMA.split("CREATE TABLE IF NOT EXISTS especies_lugares (")[1].split(";")[0]
+        connection.execute("CREATE TABLE especies_lugares (" + statement)
+        connection.execute(
+            "INSERT INTO especies_lugares SELECT id_especie, id_lugar, tipo_relacion, "
+            "fuente_id, taxon_id_stri, nota FROM especies_lugares_anterior"
+        )
+        connection.execute("DROP TABLE especies_lugares_anterior")
 
 
 def remove_missing_rows(connection, table, key_columns, rows):
@@ -136,6 +189,23 @@ def initialize_database():
                 place[coordinate] = value(row, coordinate)
             places.append(place)
         relations = read_csv("especies_lugares.csv")
+        images = read_csv("imagenes_especies.csv")
+        place_images = read_csv("imagenes_lugares.csv")
+        for rows, records, key in [(images, species, "id_especie"), (place_images, places, "id_lugar")]:
+            if len(rows) != len(records) or {r[key] for r in rows} != {r[key] for r in records}:
+                raise ValueError(f"El registro visual debe incluir una fila por {key}")
+            for image in rows:
+                if image.get("archivo"):
+                    path = (ROOT / "static" / image["archivo"]).resolve()
+                    if not path.is_relative_to((ROOT / "static/img").resolve()):
+                        raise ValueError(f"Ruta de imagen inválida: {image['archivo']}")
+                if image["estado"] == "verificada":
+                    name = "nombre_cientifico" if key == "id_especie" else "nombre"
+                    expected = next(r[name] for r in records if r[key] == image[key])
+                    if image.get("nombre_confirmado") != expected or not all(image.get(field) for field in ("imagen_url", "fuente_url", "autor", "fecha_verificacion")):
+                        raise ValueError(f"Fotografía sin verificación completa: {image[key]}")
+                    if not image["imagen_url"].startswith(("https://", "http://")):
+                        raise ValueError(f"URL de fotografía inválida: {image[key]}")
         import_rows(
             connection,
             "fuentes",
@@ -162,7 +232,17 @@ def initialize_database():
             "especies_lugares",
             ["id_especie", "id_lugar", "tipo_relacion", "fuente_id", "taxon_id_stri", "nota"],
             relations,
-            ["id_especie", "id_lugar"],
+            ["id_especie", "id_lugar", "fuente_id"],
+        )
+        import_rows(
+            connection, "imagenes_especies",
+            ["id_especie", "nombre_cientifico", "nombre_confirmado", "imagen_url", "archivo", "estado", "fuente_url", "autor", "licencia", "licencia_url", "nota", "fecha_verificacion"],
+            images, "id_especie",
+        )
+        import_rows(
+            connection, "imagenes_lugares",
+            ["id_lugar", "nombre", "nombre_confirmado", "imagen_url", "archivo", "estado", "fuente_url", "autor", "licencia", "licencia_url", "nota", "fecha_verificacion"],
+            place_images, "id_lugar",
         )
         legacy_columns = {
             row[1] for row in connection.execute("PRAGMA table_info(especies)")
@@ -170,7 +250,9 @@ def initialize_database():
         for column in ("fuente_iucn_id", "fuente_lista_panama_id"):
             if column in legacy_columns:
                 connection.execute(f"UPDATE especies SET {column}=NULL")
-        remove_missing_rows(connection, "especies_lugares", ["id_especie", "id_lugar"], relations)
+        remove_missing_rows(connection, "imagenes_especies", ["id_especie"], images)
+        remove_missing_rows(connection, "imagenes_lugares", ["id_lugar"], place_images)
+        remove_missing_rows(connection, "especies_lugares", ["id_especie", "id_lugar", "fuente_id"], relations)
         remove_missing_rows(connection, "especies", ["id"], species)
         remove_missing_rows(connection, "lugares", ["id"], places)
         remove_missing_rows(connection, "fuentes", ["id"], sources)

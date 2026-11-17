@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+{% from "_species_visual.html" import visual %}
 {% block title %}Inicio | EcoAvista{% endblock %}
 {% block hero %}
 <section class="hero">
   <h1>Descubre la naturaleza de Panamá</h1>
-  <p>Una guía educativa para explorar especies y los lugares relacionados con ellas.</p>
+  <p>Busca especies por nombre, combina filtros y explora sus relaciones con checklists de áreas protegidas.</p>
   <div class="botones"><a class="btn" href="{{ url_for('species_catalog') }}">Explorar especies</a><a class="btn claro" href="{{ url_for('map_page') }}">Ver el mapa</a></div>
   <div class="stats">
     <div class="stat"><b>{{ counts.especies }}</b><span>especies en el catálogo</span></div>
-    <div class="stat"><b>{{ counts.lugares }}</b><span>lugares registrados</span></div>
+    <div class="stat"><b>{{ counts.lugares }}</b><span>áreas protegidas registradas</span></div>
     <div class="stat"><b>{{ counts.fauna }}</b><span>especies de fauna cargadas</span></div>
   </div>
   <div class="escena" aria-hidden="true"><span class="s arbol">🌳</span><span class="s ave">🦜</span><span class="s felino">🐆</span><span class="s palma1">🌴</span></div>
@@ -16,12 +17,12 @@
 {% block content %}
 <h2 class="titulo">Explora EcoAvista</h2>
 <div class="grid">
-  <a class="card" href="{{ url_for('species_catalog') }}"><span class="ico" aria-hidden="true">🔎</span><h3>Buscar una especie</h3><p>Filtra el catálogo por nombre común, científico o categoría.</p></a>
+  <a class="card" href="{{ url_for('species_catalog') }}"><span class="ico" aria-hidden="true">🔎</span><h3>Buscar una especie</h3><p>Combina nombre, flora o fauna, grupo, estado nacional y lugar.</p></a>
   <a class="card" href="{{ url_for('map_page') }}"><span class="ico" aria-hidden="true">🗺️</span><h3>Ver el mapa</h3><p>Explora localidades con coordenadas de referencia.</p></a>
   <a class="card" href="{{ url_for('places_catalog') }}"><span class="ico" aria-hidden="true">🏞️</span><h3>Explorar lugares</h3><p>Consulta los lugares asociados y los datos disponibles.</p></a>
 </div>
-<section class="banda"><div class="blob" aria-hidden="true">🌳 🦜 🌿</div><div><h2>Un catálogo documentado</h2><p>El catálogo reúne {{ counts.especies }} especies y {{ counts.lugares }} lugares a partir de referencias taxonómicas, checklists e información geográfica identificada.</p><a class="btn" href="{{ url_for('about') }}">Conoce el método</a></div></section>
-<section class="section-block"><h2 class="titulo">Especies del catálogo</h2><div class="grid">
-  {% for item in species %}<a class="card" href="{{ url_for('species_detail', species_id=item.id) }}"><span class="ico" aria-hidden="true">🌿</span><span class="tag">Flora</span><h3>{{ item.nombre_comun_es or 'Nombre común desconocido' }}</h3><p><i>{{ item.nombre_cientifico }}</i></p></a>{% endfor %}
+<section class="banda"><div class="blob" aria-hidden="true">🌳 🦜 🌿</div><div><h2>Un catálogo documentado</h2><p>El catálogo reúne {{ counts.especies }} especies y {{ counts.lugares }} lugares a partir de referencias taxonómicas, checklists e información geográfica identificada. Es una selección de checklists; no es un inventario completo de todas las especies de Panamá.</p><a class="btn" href="{{ url_for('about') }}">Conoce el método</a></div></section>
+<section class="section-block"><h2 class="titulo">Especies destacadas</h2><div class="grid">
+  {% for item in species %}<a class="card" href="{{ url_for('species_detail', species_id=item.id) }}">{{ visual(item, images) }}<span class="tag">{{ item.categoria }}</span><span class="tag">{{ item.grupo_taxonomico }}</span><span class="tag">Panamá: {{ item.estado_conservacion_panama or 'Sin dato confirmado' }}</span><h3>{{ item.nombre_comun_es or 'Nombre común desconocido' }}</h3><p><i>{{ item.nombre_cientifico }}</i></p></a>{% endfor %}
 </div></section>
 {% endblock %}

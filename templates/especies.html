@@ -1,8 +1,10 @@
 {% extends "base.html" %}
+{% from "_species_visual.html" import visual, pending %}
 {% block title %}Especies | EcoAvista{% endblock %}
 {% block hero %}<section class="hero hero-compact"><h1>Especies de Panamá</h1><p>Busca por nombre común o científico y filtra por categoría, grupo, conservación o lugar.</p><div class="escena" aria-hidden="true"><span class="s arbol">🌳</span><span class="s palma1">🌴</span></div></section>{% endblock %}
 {% block content %}
 <h2 class="titulo">Catálogo</h2>
+{{ pending(images, 'especies') }}
 <form class="busqueda species-filters" method="get" action="{{ url_for('species_catalog') }}">
   <label class="filter-search" for="q">Buscar especie<input id="q" name="q" type="search" value="{{ query }}" placeholder="Nombre común o científico"></label>
   <label class="filter-field" for="categoria">Categoría<select id="categoria" name="categoria"><option value="">Todas</option><option value="flora" {% if category == 'flora' %}selected{% endif %}>Flora</option><option value="fauna" {% if category == 'fauna' %}selected{% endif %}>Fauna</option></select></label>
@@ -11,8 +13,8 @@
   <label class="filter-field" for="lugar">Área protegida o lugar<select id="lugar" name="lugar"><option value="">Todos los lugares</option>{% for place in places %}<option value="{{ place.id }}" {% if place_id == place.id %}selected{% endif %}>{{ place.nombre }}</option>{% endfor %}</select></label>
   <div class="filter-actions"><button class="btn" type="submit">Filtrar</button><a class="btn btn-secondary" href="{{ url_for('species_catalog') }}">Restablecer</a></div>
 </form>
-<p class="filter-hint">Los filtros se combinan. Las categorías de conservación corresponden al listado nacional basado en la Resolución DM-0657-2016.</p>
+<p class="filter-hint">Busca por nombre común o científico. Cada filtro se suma a los demás; restablece para ver el catálogo completo de esta carga. No es un inventario completo de todas las especies de Panamá. Las categorías de conservación corresponden al listado nacional basado en la Resolución DM-0657-2016.</p>
 {% if species %}<p class="results-count">{{ species|length }} {{ 'resultado' if species|length == 1 else 'resultados' }}</p><div class="grid species-grid">
-  {% for item in species %}<a class="card species-card" href="{{ url_for('species_detail', species_id=item.id) }}"><div class="visual-neutral" aria-hidden="true">{% if item.categoria == 'Flora' %}🌿{% else %}🦋{% endif %}</div><div class="species-status"><span class="tag">{{ item.categoria or 'Categoría sin dato' }}</span><span class="tag tag-status">{{ item.estado_conservacion_panama or 'Sin dato confirmado' }}</span></div><h3>{{ item.nombre_comun_es or 'Nombre común desconocido' }}</h3><p><i>{{ item.nombre_cientifico }}</i></p><p class="muted">Familia: {{ item.familia or 'Sin dato' }} · Grupo: {{ item.grupo_taxonomico or 'Sin dato' }}</p></a>{% endfor %}
+  {% for item in species %}<a class="card species-card" href="{{ url_for('species_detail', species_id=item.id) }}">{{ visual(item, images) }}<div class="species-status"><span class="tag">{{ item.categoria or 'Categoría sin dato' }}</span><span class="tag">{{ item.grupo_taxonomico or 'Grupo sin dato' }}</span><span class="tag tag-status">Panamá: {{ item.estado_conservacion_panama or 'Sin dato confirmado' }}</span></div><h3>{{ item.nombre_comun_es or 'Nombre común desconocido' }}</h3><p><i>{{ item.nombre_cientifico }}</i></p><p class="muted">Familia: {{ item.familia or 'Sin dato' }} · Grupo: {{ item.grupo_taxonomico or 'Sin dato' }}</p></a>{% endfor %}
 </div>{% else %}<div class="caja notice empty-state"><h2>Sin resultados</h2><p>No encontramos especies con esos filtros. Prueba otros criterios o restablece la búsqueda.</p></div>{% endif %}
 {% endblock %}

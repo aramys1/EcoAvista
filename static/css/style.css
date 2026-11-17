@@ -1061,3 +1061,18 @@ footer::before {
     gap: 6px;
   }
 }
+
+.species-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 22px; margin-bottom: 14px; }
+.species-photo-large { object-fit: contain; background: #eef6ef; }
+.photo-credit { font-size: .8rem; color: #526b5b; overflow-wrap: anywhere; }
+.visual-neutral > span { font-size: .85rem; padding: 16px; text-align: center; }
+.species-card .tag, .places-grid .tag { white-space: normal; }
+.busqueda select { max-width: 100%; min-width: 0; }
+[hidden] { display: none !important; }
+.visual-resource { margin: 0 0 14px; }
+.visual-resource .species-photo { margin-bottom: 5px; }
+.visual-label { color: var(--verde-osc); font-size: .78rem; font-weight: 700; }
+.photo-pending { color: #526b5b; font-size: .85rem; }
+.photo-pending-list { margin-bottom: 18px; }
+.photo-pending-list ul { max-height: 320px; overflow-y: auto; padding-left: 22px; }
+.photo-pending-list summary { cursor: pointer; color: var(--verde-osc); font-weight: 700; }

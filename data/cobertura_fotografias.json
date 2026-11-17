@@ -1,0 +1,12 @@
+{
+  "especies": {
+    "total": 3507,
+    "verificadas": 575,
+    "pendientes": 2932
+  },
+  "lugares": {
+    "total": 85,
+    "verificadas": 10,
+    "pendientes": 75
+  }
+}

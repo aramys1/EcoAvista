@@ -1,96 +1,38 @@
 # Contexto de EcoAvista para continuar el trabajo
 
-Este archivo es un traspaso para el siguiente agente. Léelo junto con las instrucciones que entregue el usuario. No es contenido para mostrar dentro de la aplicación.
+## Alcance y arquitectura
 
-## Proyecto y alcance
+Aplicación educativa Flask, sqlite3, SQLite, Jinja, HTML, CSS y JavaScript. Leaflet 1.9.4 y teselas OpenStreetMap requieren Internet. Conserva la paleta y los componentes de static/css/style.css. No agregar APIs, actualizaciones automáticas ni dependencias para los datos.
 
-EcoAvista es una aplicación educativa web para consultar especies de flora y fauna de Panamá y explorar lugares relacionados. El recorrido principal es buscar una especie, abrir su ficha, consultar sus lugares relacionados y ver las localidades con coordenadas en el mapa.
+## Datos actuales
 
-El usuario pidió conservar la arquitectura, los datos y la estética existentes, con dependencias mínimas. La app está construida con Python, Flask, `sqlite3`, SQLite, Jinja, HTML, CSS y JavaScript. Leaflet carga desde CDN para el mapa. No rehagas la aplicación ni cambies la navegación por solicitudes limitadas al catálogo de especies.
+Los CSV estáticos contienen 3.507 especies (2.976 flora y 531 fauna), 85 áreas protegidas, 4.984 relaciones de checklist por fuente y 19 fuentes. Hay seis grupos: plantas, aves, anfibios, peces, mamíferos y reptiles. No es un inventario completo de la biodiversidad de Panamá.
+Los checklists seleccionados corresponden a Altos de Campana, Soberanía, Barro Colorado y Coiba.
+83 coordenadas son centroides aproximados derivados de geometrías oficiales MiAMBIENTE y dos son referencias de localidad publicadas por STRI. Ningún punto representa entrada de parque ni posición individual de especie.
+La conservación es nacional, basada en la Resolución DM-0657-2016: los valores vacíos muestran “Sin dato confirmado”. No usar categorías globales UICN ni inferir ausencia de amenaza.
+data/imagenes_especies.csv tiene 3.507 filas: dos fotografías verificadas (Anacardium occidentale y Dendrobates auratus) y 3.505 ilustraciones referenciales de seis grupos. Archivos activos en static/img/especies/. Las fotos de especies no documentan avistamientos en Panamá.
+data/imagenes_lugares.csv tiene 85 filas: fotografía identificada de Coiba (dronepicr, CC BY 2.0) y 84 mapas de área. Las 85 áreas tienen un mapa propio como respaldo. Geometrías estáticas simplificadas en data/geometrias_lugares.json, EPSG:32617, vinculadas por objectid_1 a id_miambiente y comprobadas por nombre. No usar las miniaturas para navegación o delimitación legal. La capa no declara licencia específica; conservar fuente y atribución.
 
-## Estado del repositorio
+## Implementación
 
-- Repositorio local: `C:\Users\Asus Vivobook\OneDrive - Universidad Tecnológica de Panamá\Escritorio\EcoAvista`
-- Rama: `main`
-- Último commit: `6319b0b Add species filters and conservation details`
-- La última revisión mostró el árbol de trabajo limpio y la rama local 4 commits por delante de `origin/main`.
-- Los HTML estáticos anteriores fueron retirados porque se sustituyeron por plantillas. Su CSS se conservó en `static/css/style.css`; las páginas antiguas se pueden consultar con `git show <commit>:<archivo>`.
-- El archivo `.db` local está excluido de Git.
+- init_db.py importa UTF-8 con BOM opcional, migra el esquema y sincroniza los cuatro CSV y el registro de imágenes mediante UPSERT y eliminación de registros ausentes.
+- especies_lugares usa clave (id_especie, id_lugar, fuente_id). La migración copia los registros existentes antes de retirar la tabla anterior; la importación restaura las relaciones que la clave antigua colapsaba.
+- imagenes_especies e imagenes_lugares usan el ID de su registro como clave; init_db.py valida cobertura completa, rutas locales y sincroniza ambos CSV. Migra el registro antiguo de dos fotos.
+- app.py conserva consultas parametrizadas, filtros combinables de nombre, flora/fauna, grupo, estado nacional y lugar. Inicio muestra especies con fotografía verificada.
+- visuales.py produce SVG de grupo y de área; preparar_visuales.py regenera archivos y registros visuales sin descargas. templates/_species_visual.html comparte imágenes, etiquetas y créditos. Flask detecta archivos faltantes y ofrece el SVG incrustado. static/js/visuales.js sustituye imágenes fallidas y actualiza su etiqueta y atribución. El respaldo de especie dice “Ilustración referencial”; el de lugar “Mapa del área”.
+- /mapa filtra lugares por EXISTS para no duplicar marcadores por fuente; ajusta todos los puntos y conserva lista HTML aun sin Leaflet o teselas. Verde: centroide; azul: STRI. No hay filtro de acceso.
+- /lugares distingue áreas con checklist de las demás mediante conteo de especies distintas.
 
-## Arquitectura y archivos principales
+## Ejecución
 
-- `app.py`: rutas Flask, consultas parametrizadas, filtros de `/especies` y fichas.
-- `init_db.py`: esquema SQLite, importación idempotente de CSV y migración incremental de columnas nuevas en `especies`.
-- `data/especies.csv`: registro de especies, grupo biológico, categoría y año UICN, y estado/año/fuente de lista nacional.
-- `data/fuentes.csv`: procedencia de taxonomía, evaluaciones UICN y referencia nacional.
-- `data/especies_lugares.csv`, `data/lugares.csv`: relaciones y localidades existentes; no deben alterarse para tareas solo de especies.
-- `templates/base.html`: navegación compartida y estructura común.
-- `templates/especies.html`: catálogo y filtros.
-- `templates/especie_detalle.html`: ficha de especie, conservación y relaciones de localidades.
-- `static/css/style.css`: estilos del sitio; conserva variables verdes/azules, tarjetas orgánicas, fondos claros y adaptación móvil.
-- `requirements.txt`: Flask es la única dependencia Python directa.
-- `instance/ecoavista.db`: base local generada por `python init_db.py`; no versionar.
-
-## Trabajo ya realizado
-
-La aplicación inicial tiene Inicio, Catálogo, Ficha de especie, Mapa, Catálogo de lugares, Ficha de lugar y Nosotros. El mapa solo presenta marcadores con coordenadas y atribuye OpenStreetMap. Los checklists se expresan como inclusiones en listas, no como avistamientos confirmados. Los accesos no respaldados aparecen como desconocidos.
-
-El cambio más reciente añadió al catálogo de especies búsqueda más filtros combinables de:
-
-- Categoría: Flora o Fauna.
-- Grupo: Aves, Mamíferos, Reptiles, Anfibios, Peces e Invertebrados.
-- Categoría global UICN, incluido el filtro separado “Sin dato”.
-- Estado independiente en la lista nacional de Panamá: Incluida, No incluida o Sin dato.
-
-Las fichas de especies muestran grupo biológico, categoría UICN con año y fuente, y estado nacional con su referencia y año de evaluación. Solo VU, EN y CR se etiquetan como amenazadas globalmente. El catálogo también muestra el estado y la categoría de forma compacta en las tarjetas. La interfaz conserva los componentes y colores existentes.
-
-`init_db.py` agrega las columnas necesarias a una base creada con el esquema anterior sin eliminar ni cambiar los IDs existentes. La carga posterior actualiza registros por ID y conserva las relaciones.
-
-## Datos de conservación actuales
-
-La carga inicial conserva tres especies, todas de flora:
-
-| ID | Especie | Grupo biológico | UICN global | Año de evaluación | Lista nacional Panamá |
-|---|---|---|---|---:|---|
-| E001 | *Anacardium excelsum* | Sin dato | LC · Preocupación Menor | 2023 | Sin dato |
-| E002 | *Anacardium occidentale* | Sin dato | LC · Preocupación Menor | 2021 | Sin dato |
-| E003 | *Spondias mombin* | Sin dato | LC · Preocupación Menor | 2018 | Sin dato |
-
-Hay 8 relaciones especie-lugar y 11 fuentes en la base después de incorporar las nuevas referencias. No se añadió fauna ni se inventaron grupos biológicos o ambientes. Los grupos de fauna están disponibles en el filtro; cada uno muestra un mensaje cuando todavía no hay registros.
-
-La resolución DM-0657-2016 se registró como referencia, pero no se confirmó la inclusión/exclusión individual de los tres taxones en la lista. Por eso el estado y el año de evaluación nacional permanecen `Sin dato`. Mantén la distinción entre esta lista nacional y la Lista Roja global.
-
-Referencias registradas:
-
-- UICN FAQ y categorías: <https://nrl.iucnredlist.org/about/faqs>
-- *Anacardium excelsum*, IUCN Red List 2023: <https://doi.org/10.2305/IUCN.UK.2023-1.RLTS.T60761471A167188409.en>
-- *Anacardium occidentale*, IUCN Red List 2021: <https://doi.org/10.2305/IUCN.UK.2021-3.RLTS.T60761600A60761604.en>
-- *Spondias mombin*, evaluación IUCN 2018 / publicación 2019: <https://doi.org/10.2305/IUCN.UK.2019-2.RLTS.T61984209A149039998.en>
-- Resolución N.° DM-0657-2016, Gaceta Oficial de Panamá: <https://www.gacetaoficial.gob.pa/storage/gacetas/2016/12/28187_A/GacetaNo_28187a_20161229.pdf>
-
-## Ejecución local
-
-Ejecuta PowerShell desde la raíz del repositorio. La base se inicializa o migra al correr `init_db.py`.
-
+Desde la raíz del repositorio, activa .venv y ejecuta:
 ```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
 python init_db.py
 python -m flask --app app run
 ```
+Abre http://127.0.0.1:5000. La base instance/ecoavista.db se genera localmente y no se versiona.
+Revisa git status antes de editar, conserva cambios locales, no hagas push ni borres la base. Los cambios del usuario en lugares.csv y fuentes.csv se conservaron.
 
-Abre <http://127.0.0.1:5000>. El mapa requiere Internet para Leaflet y las teselas de OpenStreetMap. Asegúrate de estar en la carpeta del repositorio antes de ejecutar los comandos; el usuario ya encontró los errores de `requirements.txt` y `init_db.py` al ejecutarlos desde `C:\Users\Asus Vivobook`.
+## Comprobación
 
-## Validación conocida
-
-Se ejecutó la inicialización de la base con el esquema ampliado y se comprobó que siguen presentes E001–E003, las 8 relaciones y 11 fuentes. No se ejecutó una prueba integral del servidor Flask en este entorno; el usuario debe instalar los requisitos en el entorno virtual ubicado dentro del repositorio.
-
-## Guía para el siguiente agente
-
-1. Revisa `git status` antes de modificar archivos y conserva cambios locales del usuario.
-2. Sigue el alcance explícito del último mensaje del usuario; si el cambio es solo de especies, limita el trabajo a catálogo, ficha, fuente/datos y esquema imprescindibles.
-3. No inventes categorías, años, fuentes, grupo biológico, fauna ni ambientes. Usa “Sin dato” cuando no exista respaldo verificable.
-4. Conserva los IDs de CSV, las relaciones, las consultas SQL parametrizadas y la estética existente.
-5. No agregues dependencias si la función se puede realizar con Flask, SQLite, Jinja, CSS o JavaScript ya usados.
-6. No hagas push ni borres la base local. Recuerda que la base se genera desde CSV con `python init_db.py`.
+Se repitió init_db.py: 3.507 especies, 85 lugares, 4.984 relaciones, 19 fuentes, 3.507 registros visuales de especies y 85 de lugares; sin errores de claves foráneas. Se comprobó cobertura completa de ambos registros y los 94 archivos activos distintos (tres JPEG, seis SVG de grupo y 85 SVG de área), incluyendo los respaldos. El cliente Flask confirmó respuestas 200 de Inicio, Catálogo, fichas con fotos y referencias, Lugares, Mapa y Nosotros, con 3.507 imágenes en el catálogo y 85 en Lugares. Se simuló la ausencia de archivos locales para comprobar el respaldo SVG incrustado. No se realizó revisión visual de las páginas en navegador. El mapa interactivo conserva 85 puntos (83 centroides) y depende de Internet para Leaflet y teselas; los recursos visuales y sus respaldos son locales.
