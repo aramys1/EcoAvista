@@ -1,0 +1,86 @@
+/* Fichas de la guía de campo */
+.field-guide { --ink:#193f32; --border:#d4dfd2; --paper:#f4f6ec; color:var(--ink); padding-bottom:2rem; }
+.field-back { display:inline-flex; align-items:center; min-height:44px; color:#466958; font-weight:700; }
+.field-cover { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); border-radius:24px; overflow:hidden; background:var(--paper); border:1px solid var(--border); }
+.field-intro { padding:clamp(24px,4vw,58px); align-self:center; }
+.field-kicker, .field-region { display:flex; align-items:center; gap:.55rem; }
+.field-kicker { color:#426443; font-size:.78rem; letter-spacing:.09em; font-weight:800; text-transform:uppercase; }
+.field-guide h1, .field-guide h2 { font-family:Fraunces,Georgia,serif; font-weight:600; letter-spacing:-.025em; line-height:1.1; }
+.field-guide h1 { font-size:clamp(2.35rem,4.4vw,4.1rem); margin:.65rem 0; overflow-wrap:anywhere; }
+.field-latin, .field-region { color:#446252; }
+.field-tag { display:table; background:#dfecc7; padding:.25rem .75rem; border-radius:2rem; font-weight:700; font-size:.83rem; margin:1rem 0; }
+.field-intro > p:not([class]) { margin:1rem 0; max-width:58ch; }
+.field-icon { flex:none; width:1.15em; height:1.15em; }
+.field-photo { min-width:0; display:flex; flex-direction:column; justify-content:center; background:#e6eadc; }
+.field-photo figure { margin:0; position:relative; }
+.field-photo .visual-resource .species-photo { display:block; border-radius:0; width:100%; height:clamp(240px,32vw,430px); margin:0; object-fit:cover; }
+.field-photo.specimen img, .field-species .field-photo .species-photo { object-fit:contain; }
+.field-photo .photo-credit { padding:.55rem 1rem; margin:0; line-height:1.4; font-size:.76rem; }
+.field-photo .photo-credit a { font-weight:700; text-decoration:underline; }
+.field-photo .visual-label { position:absolute; bottom:.6rem; left:.7rem; background:#fff; color:#284a3e; padding:.2rem .6rem; border-radius:12px; }
+.field-actions { display:flex; flex-wrap:wrap; gap:.55rem; margin:.75rem 0; }
+.field-action { display:inline-flex; align-items:center; gap:.55rem; min-height:44px; padding:.6rem 1rem; border-radius:12px; border:1px solid #bccdbf; background:#fff; color:var(--ink); font-size:.88rem; font-weight:700; line-height:1.35; text-decoration:none; }
+.field-action.primary { background:#20563f; color:white; border-color:#20563f; }
+.field-action:hover, .field-evidence:hover, .field-back:hover { text-decoration:underline; text-underline-offset:3px; }
+.field-guide :focus-visible { outline:3px solid #367a9b; outline-offset:2px; }
+.field-caption { display:block; color:#4b6558; margin:.7rem 0; font-size:.87rem; }
+.field-section { margin:clamp(26px,4vw,52px) 0 1.25rem; }
+.field-section h2 { display:flex; align-items:center; gap:.6rem; font-size:clamp(1.55rem,2.4vw,2.25rem); }
+.field-section h2 .field-icon { color:#52774e; width:.88em; }
+.field-section > p { margin:.6rem 0 1rem; max-width:78ch; }
+.field-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(265px,100%),1fr)); gap:.9rem; margin-top:1rem; }
+.field-card { min-width:0; display:flex; flex-direction:column; border:1px solid var(--border); border-radius:16px; overflow:hidden; background:#fff; }
+.field-card:hover { border-color:#7d9c80; }
+.field-card-main { display:grid; grid-template-columns:80px minmax(0,1fr) 18px; align-items:center; gap:.85rem; padding:.65rem; color:var(--ink); }
+.field-card-main strong,.field-card-main small { display:block; overflow-wrap:anywhere; }
+.field-card-main strong { font-size:1.02rem; line-height:1.25; }
+.field-card-main small { margin-top:.25rem; color:#54715c; font-size:.78rem; }
+.field-thumb { position:relative; }
+.field-thumb figure { margin:0; }
+.field-thumb .visual-resource img { height:72px; width:80px; object-fit:cover; border-radius:9px; margin:0; }
+.field-thumb .visual-label { font-size:.6rem; line-height:1.15; letter-spacing:0; }
+.field-evidence { display:flex; align-items:center; gap:.5rem; background:#f5f7f1; padding:.5rem .8rem; font-size:.78rem; border-top:1px solid var(--border); color:#345840; }
+.field-evidence:first-of-type { margin-top:auto; }
+.field-conservation { padding:1.35rem; border-left:4px solid #729454; background:#f4f7ec; border-radius:0 14px 14px 0; }
+.field-technical { border-top:1px solid var(--border); margin-top:1.4rem; padding:.9rem .25rem; }
+.field-technical + .field-technical { margin-top:0; }
+.field-technical summary,.field-more summary,.field-conservation summary { cursor:pointer; font-weight:700; padding:.5rem 0; }
+.field-technical summary .field-icon { vertical-align:text-bottom; margin:0 .4rem; }
+.field-technical h3 { margin:1rem 0 .5rem; }
+.field-technical p { max-width:88ch; margin:.7rem 0; }
+.field-facts { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.75rem; margin:1rem 0; }
+.field-facts div { background:#f4f7f1; padding:.8rem; border-radius:10px; }
+.field-facts dt { color:#536852; font-size:.76rem; font-weight:700; }
+.field-facts dd { margin:.25rem 0 0; overflow-wrap:anywhere; }
+@media(max-width:720px) {
+ .field-cover { grid-template-columns:1fr; }
+ .field-intro { padding:1.35rem; }
+ .field-photo .visual-resource .species-photo { height:clamp(200px,60vw,335px); }
+ .field-grid { grid-template-columns:1fr; }
+}
+
+.field-gallery { display:flex; flex-wrap:wrap; align-content:center; gap:.35rem; min-width:0; background:#e6eadc; padding-top:.65rem; position:relative; }
+.field-gallery > input { position:absolute; width:1px; height:1px; opacity:0; }
+.field-gallery > label { display:flex; align-items:center; gap:.35rem; font-size:.83rem; font-weight:700; padding:.5rem .75rem; border-radius:2rem; cursor:pointer; color:#345140; }
+.field-gallery > label:first-of-type { margin-left:.6rem; }
+.field-gallery > input:checked + label { background:#244c3c; color:white; }
+.field-gallery > input:focus-visible + label { outline:3px solid #246cb5; }
+.field-gallery > figure,.field-gallery > .from-above { width:100%; margin:0; }
+#view-field:checked ~ .from-above, #view-area:checked ~ .on-site { display:none; }
+.field-gallery .local-shot { display:block; width:100%; height:clamp(230px,30vw,400px); object-fit:contain; }
+
+@media(max-width:720px) {
+  .field-cover { grid-template-columns:minmax(0,1fr); padding-block:1.15rem; }
+  .field-intro { display:contents; }
+  .field-intro > * { min-width:0; margin-inline:1.15rem; }
+  .field-intro > .field-kicker { order:1; }
+  .field-intro > h1 { order:2; margin-inline:1.15rem; }
+  .field-intro > .field-region,.field-intro > .field-latin { order:3; }
+  .field-cover > .field-photo,.field-cover > .field-gallery { order:4; margin:.9rem 0; }
+  .field-intro > .field-tag { order:5; justify-self:start; margin-block:.1rem; }
+  .field-intro > p:not([class]) { order:6; margin:.65rem 1.15rem; }
+  .field-intro > .field-actions { order:7; }
+  .field-intro > .field-caption { order:8; }
+  .field-card-main { grid-template-columns:70px minmax(0,1fr) 16px; }
+  .field-thumb .visual-resource img { width:70px; }
+}

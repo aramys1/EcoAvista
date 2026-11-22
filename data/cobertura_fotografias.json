@@ -1,12 +1,18 @@
 {
   "especies": {
-    "total": 3507,
-    "verificadas": 575,
-    "pendientes": 2932
+    "total": 3512,
+    "verificadas": 3512,
+    "pendientes": 0,
+    "referenciales": 390,
+    "fotografias_especificas": 3122,
+    "cobertura_porcentaje": 100.0
   },
   "lugares": {
     "total": 85,
-    "verificadas": 10,
-    "pendientes": 75
+    "verificadas": 85,
+    "pendientes": 0,
+    "referenciales": 0,
+    "fotografias_especificas": 85,
+    "cobertura_porcentaje": 100.0
   }
 }

@@ -1,0 +1,74 @@
+[
+  {
+    "id_lugar": "L_MA_004",
+    "nombre": "Darién",
+    "archivo": "img/lugares/l_ma_004_miambiente.jpg",
+    "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/08/8f9d5f8f-eb5c-4ae2-a582-43737aecd929-1024x768.jpg",
+    "fuente_url": "https://miambiente.gob.pa/parque-nacional-darien-46-anos-protegiendo-la-riqueza-natural-de-panama/",
+    "evidencia": {
+      "titulo": "Parque Nacional Darién 46 años protegiendo la riqueza natural de Panamá",
+      "fuente_url": "https://miambiente.gob.pa/parque-nacional-darien-46-anos-protegiendo-la-riqueza-natural-de-panama/",
+      "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/08/8f9d5f8f-eb5c-4ae2-a582-43737aecd929-1024x768.jpg",
+      "alt": "",
+      "caption": "",
+      "descripcion": "Darién, 8 de agosto de 2026. El Parque Nacional Darién, el área protegida más extensa de Panamá y una de las reservas naturales más importantes de Centroamérica, conmemora 46 años de creación reafirmando su papel como bastión de conservación ambiental y cultural. Desde su establecimiento el 7 de agosto de 1980, este territorio ha sido clave en la protección de ecosistemas únicos, así como en la preservación de la diversidad biológica y las tradiciones de las comunidades que habitan en su entorno.\nReconocido como Sitio de Patrimonio Mundial por la UNESCO, el parque alberga una extraordinaria riqueza natural que incluye bosques tropicales, ríos y una amplia variedad de especies de flora y fauna, muchas de ellas endémicas o en peligro de extinción. Su importancia trasciende fronteras, posicionándolo como uno de los espacios naturales más relevantes de la región.\nLas actividades conmemorativas iniciaron en el corregimiento de Yaviza con un Desfile de Antorchas que reunió a autoridades, guardaparques, estudiantes, docentes y residentes. La caminata recorrió las principales calles del corregimiento y estuvo acompañada de mensajes alusivos a la conservación del ambiente y al valor ecológico y cultural del parque.\nEl desfile contó con el respaldo del Servicio Nacional de Fronteras (SENAFRONT) y la participación de docentes y estudiantes del Colegio José del Carmen Mejía, quienes se sumaron a la jornada como muestra de apoyo a las iniciativas de protección del patrimonio natural. La a",
+      "api": "https://miambiente.gob.pa/wp-json/wp/v2/posts/308217"
+    },
+    "ancho": 1024,
+    "alto": 768
+  },
+  {
+    "id_lugar": "L_MA_020",
+    "nombre": "Golfo de Chiriquí",
+    "archivo": "img/lugares/l_ma_020_miambiente.jpg",
+    "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-02-at-1.19.47-PM-1024x768.jpeg",
+    "fuente_url": "https://miambiente.gob.pa/parque-nacional-marino-golfo-de-chiriqui-32-anos-resguardando-un-santuario-de-vida-en-el-pacifico-panameno/",
+    "evidencia": {
+      "titulo": "Parque Nacional Marino Golfo de Chiriquí: 32 años resguardando un santuario de vida en el Pacífico panameño",
+      "fuente_url": "https://miambiente.gob.pa/parque-nacional-marino-golfo-de-chiriqui-32-anos-resguardando-un-santuario-de-vida-en-el-pacifico-panameno/",
+      "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-02-at-1.19.47-PM-1024x768.jpeg",
+      "alt": "",
+      "caption": "",
+      "descripcion": "Chiriquí, 2 de agosto de 2026. – Desde la superficie, el Golfo de Chiriquí parece un paisaje de aguas tranquilas salpicado por decenas de islas cubiertas de bosque. Pero bajo ese escenario se desarrolla uno de los ecosistemas marino-costeros más ricos del Pacífico panameño. Arrecifes coralinos, praderas marinas, fondos rocosos y manglares sostienen una compleja red de vida que, cada año, recibe a uno de los visitantes más emblemáticos del océano: las ballenas jorobadas.Hoy, el Parque Nacional Marino Golfo de Chiriquí cumple 32 años de proteger ese patrimonio natural. Creado mediante la Resolución de Junta Directiva No. 019-94 del entonces Instituto Nacional de Recursos Naturales Renovables (INRENARE), hoy Ministerio de Ambiente (MiAMBIENTE), el área protegida se extiende entre los distritos de David y San Lorenzo, abarcando los corregimientos de Pedregal y Boca Chica.Con 14,740 hectáreas, de las cuales cerca del 90 % corresponde a superficie marina, el parque resguarda 44 islas, islotes y cayos que forman parte del Sistema Nacional de Áreas Protegidas (SINAP). Su Plan de Manejo, aprobado en 2011, define cómo conservar estos ecosistemas sin excluir actividades tradicionales como la pesca artesanal y el turismo de naturaleza.El refugio donde nacen las nuevas generacionesEntre julio y octubre, el parque adquiere un protagonismo especial. Miles de kilómetros después de abandonar las aguas frías donde se alimentan, las ballenas jorobadas llegan al Golfo de Chiriquí para reproducir",
+      "api": "https://miambiente.gob.pa/wp-json/wp/v2/posts/308004"
+    },
+    "ancho": 1024,
+    "alto": 768
+  },
+  {
+    "id_lugar": "L_MA_077",
+    "nombre": "La Amistad",
+    "archivo": "img/lugares/l_ma_077_miambiente.jpg",
+    "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-02-at-3.12.36-PM-1024x768.jpeg",
+    "fuente_url": "https://miambiente.gob.pa/parque-internacional-la-amistad-38-anos-de-conservacion-entre-bosques-biodiversidad-y-nuevas-generaciones/",
+    "evidencia": {
+      "titulo": "Parque Internacional La Amistad: 38 años de conservación entre bosques, biodiversidad y nuevas generaciones",
+      "fuente_url": "https://miambiente.gob.pa/parque-internacional-la-amistad-38-anos-de-conservacion-entre-bosques-biodiversidad-y-nuevas-generaciones/",
+      "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-02-at-3.12.36-PM-1024x768.jpeg",
+      "alt": "",
+      "caption": "",
+      "descripcion": "Chiriquí, 2 de septiembre de 2026. Hay lugares donde la naturaleza no solo se contempla: también se escucha, se respira y se aprende a proteger. En las montañas de Chiriquí, el Parque Internacional La Amistad (PILA) conmemora, este 2 de septiembre, 38 años de creación en Panamá. Esta área protegida se consolida como uno de los principales reservorios de biodiversidad del país y del mundo, creando un escenario donde la conservación y educación ambiental se encuentran con las nuevas generaciones.Un aniversario para aprender en el bosqueLa celebración tuvo como protagonistas a estudiantes de la Escuela Primaria Las Nubes y Escuela Básica General de Cerro Punta, quienes participaron en una jornada de aprendizaje en el área de visitantes de la sede del PILA. Los senderos han sido remozados con material antideslizante y otras mejoras, para evitar la acumulación del agua y facilitar la travesía.La jornada contempló cinco estaciones de interpretación dirigidas por los guardaparques, quienes compartieron con los estudiantes información sobre la flora, la fauna, la historia del parque y las investigaciones desarrolladas en este territorio.Ernesto Ponce, director regional del Ministerio de Ambiente (MiAMBIENTE) en Chiriquí, destacó la importancia de acercar a las nuevas generaciones a este patrimonio natural. “Actualmente, el Parque Internacional La Amistad ofrece mejores facilidades para recibir a los visitantes y desarrollar actividades de educación ambiental en condiciones más segura",
+      "api": "https://miambiente.gob.pa/wp-json/wp/v2/posts/308660"
+    },
+    "ancho": 1024,
+    "alto": 768
+  },
+  {
+    "id_lugar": "L001",
+    "nombre": "Altos de Campana",
+    "archivo": "img/lugares/l001_miambiente.jpg",
+    "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/06/1000633105-768x1024.jpg",
+    "fuente_url": "https://miambiente.gob.pa/ministerio-de-ambiente-exhorta-a-proteger-y-respetar-las-infraestructuras-del-parque-nacional-y-reserva-biologica-altos-de-campana/",
+    "evidencia": {
+      "titulo": "Ministerio de Ambiente exhorta a proteger y respetar las infraestructuras del Parque Nacional y Reserva Biológica Altos de Campana",
+      "fuente_url": "https://miambiente.gob.pa/ministerio-de-ambiente-exhorta-a-proteger-y-respetar-las-infraestructuras-del-parque-nacional-y-reserva-biologica-altos-de-campana/",
+      "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/06/1000633105-768x1024.jpg",
+      "alt": "",
+      "caption": "",
+      "descripcion": "Panamá Oeste, 17 de junio 2026. El Ministerio de Ambiente (MiAMBIENTE) hace un llamado a la ciudadanía y visitantes a cuidar, respetar y preservar las infraestructuras, señalizaciones y letreros informativos ubicados dentro del Parque Nacional y Reserva Biológica Altos de Campana, luego de registrarse un acto de vandalismo contra uno de los letreros instalados en esta área protegida.\r\nEl hecho fue detectado en un letrero informativo ubicado aproximadamente a 200 metros del Centro de Información del parque, el cual fue vandalizado, presumiblemente durante horas de la noche.\r\nEsta situación afecta los esfuerzos que se realizan para mejorar la experiencia de los visitantes y fortalecer la conservación de este importante patrimonio natural del país.\r\nLas autoridades ambientales recuerdan que toda infraestructura instalada dentro del parque forma parte de las acciones de manejo y conservación del área, por lo que su deterioro o destrucción representa una afectación directa a los servicios que reciben los visitantes y a los esfuerzos institucionales encaminados a la protección del ambiente.\r\nEl Ministerio de Ambiente reitera que los parques nacionales son espacios destinados a la conservación, la recreación responsable y la educación ambiental, por lo que solicita la colaboración de todos los usuarios para evitar actos de vandalismo, daños a las instalaciones, extracción de recursos naturales o cualquier actividad que atente contra la integridad del área protegida.",
+      "api": "https://miambiente.gob.pa/wp-json/wp/v2/posts/305647"
+    },
+    "ancho": 768,
+    "alto": 1024
+  }
+]

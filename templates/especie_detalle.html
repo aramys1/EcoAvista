@@ -1,17 +1,59 @@
 {% extends "base.html" %}
-{% from "_species_visual.html" import visual, credit %}
+{% import "_field_guide.html" as ui %}
+{% from "_species_visual.html" import visual %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/fichas.css') }}">{% endblock %}
 {% block title %}{{ species.nombre_comun_es or species.nombre_cientifico }} | EcoAvista{% endblock %}
-{% block hero %}<section class="hero hero-compact"><p class="eyebrow">Ficha de especie · {{ category }}</p><h1>{{ species.nombre_comun_es or species.nombre_cientifico }}</h1><p><i>{{ species.nombre_cientifico }}</i></p><div class="escena" aria-hidden="true"><span class="s arbol">🌳</span><span class="s palma1">🌴</span></div></section>{% endblock %}
 {% block content %}
-<a class="back-link" href="{{ url_for('species_catalog') }}">← Volver al catálogo</a>
-<section class="detail-layout"><div class="detail-main"><h2 class="titulo">Información disponible</h2><dl class="detail-list"><div><dt>Categoría</dt><dd>{{ species.categoria or 'Sin dato' }}</dd></div><div><dt>Grupo taxonómico</dt><dd>{{ species.grupo_taxonomico or 'Sin dato' }}</dd></div><div><dt>Familia</dt><dd>{{ species.familia or 'Sin dato' }}</dd></div><div><dt>Rango taxonómico</dt><dd>{{ species.rango_taxonomico or 'Sin dato' }}</dd></div><div><dt>Nombre común</dt><dd>{{ species.nombre_comun_es or 'Sin dato' }}</dd></div></dl>
-<div class="caja"><h2>Fuentes de la ficha</h2><ul class="source-list">
-  <li>Taxonomía: {% if species.fuente_taxonomia_url %}<a href="{{ species.fuente_taxonomia_url }}" target="_blank" rel="noopener">{{ species.fuente_taxonomia_titulo }}</a>{% else %}Sin fuente asociada{% endif %}{% if species.fuente_taxonomia_nota %}<p>{{ species.fuente_taxonomia_nota }}</p>{% endif %}</li>
-  {% if species.nombre_comun_es %}<li>Nombre común: {% if species.fuente_nombre_comun_url %}<a href="{{ species.fuente_nombre_comun_url }}" target="_blank" rel="noopener">{{ species.fuente_nombre_comun_titulo }}</a>{% else %}Sin fuente asociada{% endif %}</li>{% endif %}
-</ul></div>
-<h2 class="titulo section-block">Conservación nacional · Resolución DM-0657-2016</h2><section class="conservation-card national-card"><div><span class="eyebrow">Categoría nacional</span><strong class="conservation-value">{{ species.estado_conservacion_panama or 'Sin dato confirmado' }}</strong></div><dl class="conservation-meta"><div><dt>Referencia normativa</dt><dd>{% if species.fuente_resolucion_url %}<a href="{{ species.fuente_resolucion_url }}" target="_blank" rel="noopener">{{ species.fuente_resolucion_titulo }}</a>{% else %}Resolución DM-0657-2016{% endif %}</dd></div><div><dt>Fuente del estado individual</dt><dd>{% if species.fuente_estado_url %}<a href="{{ species.fuente_estado_url }}" target="_blank" rel="noopener">{{ species.fuente_estado_titulo }}</a>{% else %}Sin dato confirmado en el CSV{% endif %}</dd></div></dl>{% if species.fuente_estado_nota %}<p class="muted">{{ species.fuente_estado_nota }}</p>{% endif %}</section>
-<h2 class="titulo">Lugares relacionados</h2>
-{% if locations %}<ul class="related-list">{% for place in locations %}<li><div><a href="{{ url_for('place_detail', place_id=place.id) }}"><strong>{{ place.nombre }}</strong></a><p>Incluida en el checklist de este lugar. {{ place.nota_relacion }}</p>{% if place.fuente_titulo %}<p class="source-line">Fuente: <a href="{{ place.fuente_url }}" target="_blank" rel="noopener">{{ place.fuente_titulo }}</a></p>{% endif %}</div><span class="tag">Checklist local</span></li>{% endfor %}</ul>{% else %}<p>No hay lugares relacionados en los datos cargados.</p>{% endif %}
-{% if unlocated %}<p class="caution">{{ unlocated|length }} lugar relacionado no tiene coordenadas en esta carga y no aparecerá en el mapa.</p>{% endif %}
-</div><aside class="detail-aside">{{ visual(species, images, true) }}{{ credit(images.get(species.id)) }}<a class="btn" href="{{ url_for('map_page', especie=species.id) }}">Ver lugares en el mapa</a></aside></section>
+{% set profile = guide.get(species.id, {}) %}
+{% set reading = readings.get(species.id) %}
+{% set image = images.get(species.id) %}
+<div class="field-guide field-species">
+  <a class="field-back" href="{{ url_for('species_catalog') }}">← Catálogo de especies</a>
+  <section class="field-cover">
+    <div class="field-intro">
+      <p class="field-kicker">{{ ui.icon('leaf') }} {{ species.grupo_taxonomico }}</p>
+      <h1>{{ species.nombre_comun_es or species.nombre_cientifico }}</h1>
+      {% if species.nombre_comun_es %}<p class="field-latin"><i>{{ species.nombre_cientifico }}</i></p>{% endif %}
+      {% if profile.motivo %}<span class="field-tag">{{ profile.motivo }}</span>{% endif %}
+      {% if profile.historia %}<p>{{ profile.historia }}</p>{% endif %}
+      <div class="field-actions">
+        {% if locations %}{{ ui.action('Ver lugares en el mapa', url_for('map_page', especie=species.id), 'pin', primary=true) }}{% endif %}
+        {% if guide_source %}{{ ui.action('Leer en ' ~ guide_source.organizacion, guide_source.url, 'book', true) }}{% endif %}
+      </div>
+    </div>{{ ui.photo(species, images) }}
+  </section>
+  <section class="field-section">
+    <h2>{{ ui.icon('pin') }} Dónde se ha registrado</h2>
+    {% if locations %}<div class="field-grid">
+      {% for key, records in locations|groupby('id') %}
+      {% set place = records[0] %}
+      <article class="field-card">
+        <a class="field-card-main" href="{{ url_for('place_detail', place_id=key) }}">
+          <div class="field-thumb">{{ visual(place, place_images) }}</div><div><strong>{{ place.nombre }}</strong><small>{{ place.categoria_manejo }}</small></div>{{ ui.icon('arrow') }}
+        </a>
+        {% for record in records %}{% set public = record.tipo_relacion == 'observacion_publica' %}
+        <a class="field-evidence" href="{{ record.nota_relacion if public else record.fuente_url }}" target="_blank" rel="noopener">{{ ui.icon('book') }} {{ 'Observación pública en GBIF' if public else record.fuente_titulo }} ↗</a>{% endfor %}
+      </article>{% endfor %}</div>
+      {% if locations|selectattr('tipo_relacion','equalto','observacion_publica')|list %}<p class="field-caption">Las observaciones públicas enlazan al registro original. EcoAvista no las ha validado de forma independiente.</p>{% endif %}
+    {% else %}<p>Todavía no tenemos una localidad documentada para esta especie.</p>{% endif %}
+  </section>
+  <section class="field-section field-conservation"><h2>{{ ui.icon('leaf') }} Conservación en Panamá</h2>
+    {% if species.estado_conservacion_panama %}<p><strong>{{ status_label.get(species.estado_conservacion_panama, species.estado_conservacion_panama) }}</strong> según el listado nacional de 2016.</p>
+    {% else %}<details><summary>Categoría nacional sin confirmar · ¿qué significa?</summary><p>Las fuentes revisadas no permiten confirmar una categoría nacional de amenaza para esta especie.</p></details>{% endif %}
+  </section>
+  {% if reading or (image and '/taxa/' in (image.fuente_url or '') and image.tipo_visual == 'fotografia') %}
+  <section class="field-section"><h2>{{ ui.icon('book') }} Conoce más sobre la especie</h2><div class="field-actions">
+    {% if reading %}{{ ui.action('Explorar en ' ~ reading.label, reading.url, 'book', true) }}
+    {% elif 'panamabiota.org' in image.fuente_url %}{{ ui.action('Ver ficha de Biota de Panamá', image.fuente_url, 'book', true) }}{% endif %}
+  </div></section>{% endif %}
+  <details class="field-technical"><summary>{{ ui.icon('book') }} Datos científicos, normas y fuentes</summary>
+    <dl class="field-facts">{{ ui.fact('Nombre científico', species.nombre_cientifico) }}{{ ui.fact('Familia', species.familia) }}{{ ui.fact('Grupo', species.grupo_taxonomico) }}{{ ui.fact('Clasificación', species.rango_taxonomico) }}{{ ui.fact('Categoría nacional', species.estado_conservacion_panama) }}</dl>
+    <h3>Normativa nacional</h3>
+    {% if species.fuente_resolucion_url %}{{ ui.action('Resolución DM-0657-2016 · lista nacional de especies amenazadas', species.fuente_resolucion_url, 'book', true) }}{% endif %}
+    {% if species.id == 'PAN001' and guide_source %}{{ ui.action('Ley 18 de 2002 · declaración del ave nacional', guide_source.url, 'book', true) }}{% endif %}
+    {% if species.fuente_estado_nota %}<p>{{ species.fuente_estado_nota }}</p>{% endif %}
+    <h3>Fuentes de la ficha</h3><div class="field-actions">{% if species.fuente_taxonomia_url %}{{ ui.action(species.fuente_taxonomia_titulo, species.fuente_taxonomia_url, 'book', true) }}{% endif %}{% if species.fuente_nombre_comun_url and species.fuente_nombre_comun_url != species.fuente_taxonomia_url %}{{ ui.action(species.fuente_nombre_comun_titulo, species.fuente_nombre_comun_url, 'book', true) }}{% endif %}{% if species.fuente_estado_url and species.fuente_estado_url != species.fuente_resolucion_url %}{{ ui.action(species.fuente_estado_titulo,species.fuente_estado_url,'book',true) }}{% endif %}</div>
+    {% if species.fuente_taxonomia_nota %}<p>{{ species.fuente_taxonomia_nota }}</p>{% endif %}
+  </details>
+</div>
 {% endblock %}

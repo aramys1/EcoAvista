@@ -1,4 +1,4 @@
-﻿id_especie,id_lugar,tipo_relacion,fuente_id,taxon_id_stri,nota
+id_especie,id_lugar,tipo_relacion,fuente_id,taxon_id_stri,nota
 E0004,L002,incluida_en_checklist_local,F03,61359,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E0004,L003,incluida_en_checklist_local,F04,78136,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E0005,L002,incluida_en_checklist_local,F03,61361,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
@@ -4565,7 +4565,6 @@ E3142,L003,incluida_en_checklist_local,F11,167334,La inclusión en una lista de 
 E3143,L004,incluida_en_checklist_local,F13,188617,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E3144,L004,incluida_en_checklist_local,F13,6550,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E3145,L004,incluida_en_checklist_local,F13,6553,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
-E3146,L003,incluida_en_checklist_local,F10,39961,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E3147,L003,incluida_en_checklist_local,F10,39962,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E3148,L003,incluida_en_checklist_local,F09,2836,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E3149,L003,incluida_en_checklist_local,F11,10809,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
@@ -4983,3 +4982,20 @@ E3505,L003,incluida_en_checklist_local,F08,55456,La inclusión en una lista de i
 E3505,L003,incluida_en_checklist_local,F10,55456,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E3506,L003,incluida_en_checklist_local,F11,11350,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
 E3507,L004,incluida_en_checklist_local,F13,8546,La inclusión en una lista de investigación no equivale a observación actual ni a coordenada individual.
+PAN001,L_MA_004,publicacion,F20,,
+PAN001,L_MA_051,publicacion,F20,,
+PAN001,L_MA_076,publicacion,F20,,
+PAN001,L_MA_029,publicacion,F21,,
+E3146,L_MA_011,publicacion,F23,,
+E1129,L_MA_062,publicacion,F25,,
+E2120,L_MA_068,publicacion,F27,,
+PAN003,L_MA_039,publicacion,F31,,
+PAN003,L_MA_030,publicacion,F31,,
+PAN004,L_MA_079,publicacion,F32,,
+E3149,L_MA_045,publicacion,F34,,
+E3190,L_MA_045,publicacion,F34,,
+E2458,L_MA_045,publicacion,F34,,
+E2089,L_MA_025,publicacion,F35,,
+E1129,L_MA_025,publicacion,F35,,
+PAN005,L_MA_063,publicacion,F38,,
+PAN005,L_MA_004,publicacion,F38,,

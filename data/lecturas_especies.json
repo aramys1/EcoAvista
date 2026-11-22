@@ -1,0 +1,2223 @@
+{
+  "E0103": {
+    "aliases": [
+      "Amazilia tzacatl"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rtlhum?siteLanguage=es"
+  },
+  "E0139": {
+    "aliases": [
+      "Tiñosa boba"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/brnnod?siteLanguage=es"
+  },
+  "E0173": {
+    "aliases": [
+      "Chotacabras colorado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rufnig1?siteLanguage=es"
+  },
+  "E0184": {
+    "aliases": [
+      "Guacamayo macao"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/scamac1?siteLanguage=es"
+  },
+  "E0204": {
+    "aliases": [
+      "Vuelvepiedras común"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rudtur?siteLanguage=es"
+  },
+  "E0214": {
+    "aliases": [
+      "Cerquero negrilistado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/blsspa1?siteLanguage=es"
+  },
+  "E0239": {
+    "aliases": [
+      "Atila polimorfo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/brratt1?siteLanguage=es"
+  },
+  "E0265": {
+    "aliases": [
+      "Reinita coronirrufa"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rucwar?siteLanguage=es"
+  },
+  "E0332": {
+    "aliases": [
+      "Catita churica"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/orcpar?siteLanguage=es"
+  },
+  "E0349": {
+    "aliases": [
+      "Busardo aliancho"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/brwhaw?siteLanguage=es"
+  },
+  "E0350": {
+    "aliases": [
+      "Busardo negro"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/comblh1?siteLanguage=es"
+  },
+  "E0372": {
+    "aliases": [
+      "Correlimos tridáctilo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/sander?siteLanguage=es"
+  },
+  "E0373": {
+    "aliases": [
+      "Correlimos de Alaska"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/wessan?siteLanguage=es"
+  },
+  "E0374": {
+    "aliases": [
+      "Correlimos menudillo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/leasan?siteLanguage=es"
+  },
+  "E0462": {
+    "aliases": [
+      "Aura gallipavo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/turvul?siteLanguage=es"
+  },
+  "E0463": {
+    "aliases": [
+      "Zorzalito de Swainson"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/swathr?siteLanguage=es"
+  },
+  "E0513": {
+    "aliases": [
+      "Chorlitejo semipalmeado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/semplo?siteLanguage=es"
+  },
+  "E0527": {
+    "aliases": [
+      "Saltarín lanceolado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/latman1?siteLanguage=es"
+  },
+  "E0528": {
+    "aliases": [
+      "Fumarel común"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/blkter?siteLanguage=es"
+  },
+  "E0529": {
+    "aliases": [
+      "Zafiro de Elicia"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/bltgol1?siteLanguage=es"
+  },
+  "E0532": {
+    "aliases": [
+      "Martín pescador verde"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/grnkin?siteLanguage=es"
+  },
+  "E0536": {
+    "aliases": [
+      "Esmeralda afín"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/gareme1?siteLanguage=es"
+  },
+  "E0661": {
+    "aliases": [
+      "Platanero"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/banana?siteLanguage=es"
+  },
+  "E0669": {
+    "aliases": [
+      "Columbina colorada"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rugdov?siteLanguage=es"
+  },
+  "E0705": {
+    "aliases": [
+      "Pibí tropical sureño"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/tropew3?siteLanguage=es"
+  },
+  "E0710": {
+    "aliases": [
+      "Zopilote negro"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/blkvul?siteLanguage=es"
+  },
+  "E0748": {
+    "aliases": [
+      "Curutié vulpino"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rubspi4?siteLanguage=es"
+  },
+  "E0771": {
+    "aliases": [
+      "Garrapatero aní"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/smbani?siteLanguage=es"
+  },
+  "E0792": {
+    "aliases": [
+      "Mielerito patirrojo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/relhon1?siteLanguage=es"
+  },
+  "E0955": {
+    "aliases": [
+      "Garceta nívea"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/snoegr?siteLanguage=es"
+  },
+  "E0963": {
+    "aliases": [
+      "Fiofío belicoso"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/lesela1?siteLanguage=es"
+  },
+  "E0964": {
+    "aliases": [
+      "Fiofío ventriamarillo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/yebela1?siteLanguage=es"
+  },
+  "E1032": {
+    "aliases": [
+      "Corocoro blanco"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whiibi?siteLanguage=es"
+  },
+  "E1129": {
+    "aliases": [
+      "Rabihorcado magnífico"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/magfri?siteLanguage=es"
+  },
+  "E1159": {
+    "aliases": [
+      "Reinita de Kentucky"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/kenwar?siteLanguage=es"
+  },
+  "E1160": {
+    "aliases": [
+      "Paloma perdiz común"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/ruqdov?siteLanguage=es"
+  },
+  "E1252": {
+    "aliases": [
+      "Ostrero pío americano"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/ameoys?siteLanguage=es"
+  },
+  "E1368": {
+    "aliases": [
+      "Verdillo paticlaro"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/scrgre1?siteLanguage=es"
+  },
+  "E1536": {
+    "aliases": [
+      "Orejero coronipardo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/secfly1?siteLanguage=es"
+  },
+  "E1538": {
+    "aliases": [
+      "Paloma montaraz cabecigrís"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/gyhdov1?siteLanguage=es"
+  },
+  "E1539": {
+    "aliases": [
+      "Paloma montaraz común"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whtdov?siteLanguage=es"
+  },
+  "E1544": {
+    "aliases": [
+      "Gaviota guanaguanare"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/laugul?siteLanguage=es"
+  },
+  "E1708": {
+    "aliases": [
+      "Martín gigante neotropical"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rinkin1?siteLanguage=es"
+  },
+  "E1711": {
+    "aliases": [
+      "Carpintero coronirrojo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/recwoo1?siteLanguage=es"
+  },
+  "E1813": {
+    "aliases": [
+      "Mosquero aceitunado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/ocbfly1?siteLanguage=es"
+  },
+  "E1848": {
+    "aliases": [
+      "Copetón viajero"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/grcfly?siteLanguage=es"
+  },
+  "E1849": {
+    "aliases": [
+      "Copetón panameño"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/panfly1?siteLanguage=es"
+  },
+  "E1850": {
+    "aliases": [
+      "Bienteveo rayado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/strfly1?siteLanguage=es"
+  },
+  "E1851": {
+    "aliases": [
+      "Fiofío verdoso"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/greela?siteLanguage=es"
+  },
+  "E1902": {
+    "aliases": [
+      "Zarapito trinador euroasiático"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whimbr5?siteLanguage=es"
+  },
+  "E1990": {
+    "aliases": [
+      "Anambé aliblanco"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whwbec1?siteLanguage=es"
+  },
+  "E2012": {
+    "aliases": [
+      "Águila pescadora"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/osprey?siteLanguage=es"
+  },
+  "E2027": {
+    "aliases": [
+      "Reinita charquera norteña"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/norwat?siteLanguage=es"
+  },
+  "E2089": {
+    "aliases": [
+      "Pelícano pardo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/brnpel?siteLanguage=es"
+  },
+  "E2130": {
+    "aliases": [
+      "Colibrí de Cuvier"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/scbhum1?siteLanguage=es"
+  },
+  "E2253": {
+    "aliases": [
+      "Piranga escarlata"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/scatan?siteLanguage=es"
+  },
+  "E2254": {
+    "aliases": [
+      "Piranga roja"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/sumtan?siteLanguage=es"
+  },
+  "E2259": {
+    "aliases": [
+      "Bienteveo común"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/grekis?siteLanguage=es"
+  },
+  "E2287": {
+    "aliases": [
+      "Chorlito gris"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/bkbplo?siteLanguage=es"
+  },
+  "E2291": {
+    "aliases": [
+      "Perlita tropical"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/trogna1?siteLanguage=es"
+  },
+  "E2345": {
+    "aliases": [
+      "Campanero tricarunculado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/thwbel?siteLanguage=es"
+  },
+  "E2346": {
+    "aliases": [
+      "Golondrina pechigrís"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/gybmar?siteLanguage=es"
+  },
+  "E2358": {
+    "aliases": [
+      "Reinita protonotaria"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/prowar?siteLanguage=es"
+  },
+  "E2437": {
+    "aliases": [
+      "Zanate mexicano"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/grtgra?siteLanguage=es"
+  },
+  "E2440": {
+    "aliases": [
+      "Tangara dorsirroja"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/crbtan1?siteLanguage=es"
+  },
+  "E2534": {
+    "aliases": [
+      "Pepitero antillano"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/leasal1?siteLanguage=es"
+  },
+  "E2535": {
+    "aliases": [
+      "Pepitero listado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/strsal1?siteLanguage=es"
+  },
+  "E2544": {
+    "aliases": [
+      "Zopilote rey"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/kinvul1?siteLanguage=es"
+  },
+  "E2625": {
+    "aliases": [
+      "Reinita de Pensilvania"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/chswar?siteLanguage=es"
+  },
+  "E2626": {
+    "aliases": [
+      "Reinita de manglar"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/manwar1?siteLanguage=es"
+  },
+  "E2627": {
+    "aliases": [
+      "Parula pitiayumí"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/tropar?siteLanguage=es"
+  },
+  "E2628": {
+    "aliases": [
+      "Candelita norteña"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/amered?siteLanguage=es"
+  },
+  "E2712": {
+    "aliases": [
+      "Cerceta aliazul"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/buwtea?siteLanguage=es"
+  },
+  "E2735": {
+    "aliases": [
+      "Semillero aliblanco"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/wibsee1?siteLanguage=es"
+  },
+  "E2775": {
+    "aliases": [
+      "Mosquero matorralero norteño"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/nosfly1?siteLanguage=es"
+  },
+  "E2776": {
+    "aliases": [
+      "Piquero pardo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/brnboo?siteLanguage=es"
+  },
+  "E2777": {
+    "aliases": [
+      "Piquero camanay"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/bfoboo?siteLanguage=es"
+  },
+  "E2857": {
+    "aliases": [
+      "Batará barrado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/barant1?siteLanguage=es"
+  },
+  "E2875": {
+    "aliases": [
+      "Tangara azuleja"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/bugtan?siteLanguage=es"
+  },
+  "E2876": {
+    "aliases": [
+      "Tangara palmera"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/paltan1?siteLanguage=es"
+  },
+  "E2878": {
+    "aliases": [
+      "Semillero tomeguín"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/yefgra1?siteLanguage=es"
+  },
+  "E2880": {
+    "aliases": [
+      "Avetigre mexicana"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/btther1?siteLanguage=es"
+  },
+  "E2888": {
+    "aliases": [
+      "Titira enmascarado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/mastit1?siteLanguage=es"
+  },
+  "E2891": {
+    "aliases": [
+      "Titirijí común"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/cotfly1?siteLanguage=es"
+  },
+  "E2940": {
+    "aliases": [
+      "Playero de Alaska"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/wantat1?siteLanguage=es"
+  },
+  "E2949": {
+    "aliases": [
+      "Chochín criollo norteño"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/houwre?siteLanguage=es"
+  },
+  "E2952": {
+    "aliases": [
+      "Zorzal cuelliblanco sureño"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whnthr2?siteLanguage=es"
+  },
+  "E2953": {
+    "aliases": [
+      "Zorzal cuelliblanco norteño"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whtrob1?siteLanguage=es"
+  },
+  "E2958": {
+    "aliases": [
+      "Tirano melancólico"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/trokin?siteLanguage=es"
+  },
+  "E2988": {
+    "aliases": [
+      "Carpintero culirrojo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rerwoo1?siteLanguage=es"
+  },
+  "E2998": {
+    "aliases": [
+      "Vireo verdiamarillo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/yegvir?siteLanguage=es"
+  },
+  "E2999": {
+    "aliases": [
+      "Vireo de Filadelfia"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/phivir?siteLanguage=es"
+  },
+  "E3023": {
+    "aliases": [
+      "Semillero volatinero"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/blbgra1?siteLanguage=es"
+  },
+  "E3085": {
+    "aliases": [
+      "Rana de árbol de ojos rojos",
+      "Rana Arborícola"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/23702"
+  },
+  "E3086": {
+    "aliases": [
+      "Rana Deslizadora",
+      "rana de hoja de ojos negros",
+      "rana de hoja planeador",
+      "Rana mono planeadora"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/134927"
+  },
+  "E3088": {
+    "aliases": [
+      "rana cohete rayado",
+      "Rana saltarina de Talamanca"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/64873"
+  },
+  "E3089": {
+    "aliases": [
+      "Saraguato de manto",
+      "Aullador De La Costa",
+      "Mono Congo",
+      "Aullador Negro",
+      "Coto Mono",
+      "Coto Mono De Tumbes",
+      "Coto Negro",
+      "Mono Coto De Tumbes",
+      "Mono Mong",
+      "Mono Aullador Pardo",
+      "Mono Zambo",
+      "Saraguato",
+      "Mono aullador de manto dorado",
+      "Saraguato pardo"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/43436"
+  },
+  "E3092": {
+    "aliases": [
+      "Amazona frentirroja"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/relpar10?siteLanguage=es"
+  },
+  "E3096": {
+    "aliases": [
+      "Anfisbena fuliginosa",
+      "Pudridora"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/31842"
+  },
+  "E3102": {
+    "aliases": [
+      "Abaniquillo Colombiano de la Hierba"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/116394"
+  },
+  "E3103": {
+    "aliases": [
+      "Abaniquilllo verde",
+      "anolis verde neotropical"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/116396"
+  },
+  "E3104": {
+    "aliases": [
+      "anolis jaspeado",
+      "abaniquillo jaspeado",
+      "anolis cabezón"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/116402"
+  },
+  "E3106": {
+    "aliases": [
+      "anolis con bridas",
+      "Anolis manchado de árbol"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/36436"
+  },
+  "E3107": {
+    "aliases": [
+      "Anolis fantasma",
+      "abaniquillo lemurino"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/116430"
+  },
+  "E3108": {
+    "aliases": [
+      "abaniquillo centroamericano",
+      "anolis centroamericano",
+      "Anolis delgado café",
+      "anolis fronterizos"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/94163"
+  },
+  "E3109": {
+    "aliases": [
+      "anolis león"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/53568"
+  },
+  "E3110": {
+    "aliases": [
+      "Abaniquillo liquen"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/116448"
+  },
+  "E3118": {
+    "aliases": [
+      "Mico De Noche Caribe"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74067"
+  },
+  "E3119": {
+    "aliases": [
+      "Macaco Da Noite",
+      "Mono De Noche",
+      "Mono Nocturno"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/43413"
+  },
+  "E3122": {
+    "aliases": [
+      "Carrao"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/limpki?siteLanguage=es"
+  },
+  "E3125": {
+    "aliases": [
+      "Murciélago frutero",
+      "Murciélago frutero de Jamaica"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41005"
+  },
+  "E3126": {
+    "aliases": [
+      "Murciélago frugívoro gigante",
+      "Murciélago frutero grande de líneas blancas"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41006"
+  },
+  "E3129": {
+    "aliases": [
+      "Mono Araña de Cabeza Negra",
+      "Marimonda del Chocó",
+      "Bracilargo",
+      "Mono araña de cabeza marrón"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/43409"
+  },
+  "E3130": {
+    "aliases": [
+      "Mono Araña Centroamericano",
+      "Mono Araña de Geoffroy",
+      "Mono araña"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/43411"
+  },
+  "E3133": {
+    "aliases": [
+      "Toloque centroamericano",
+      "Basilisco común",
+      "Lagarto jesucristo común",
+      "Basilisco",
+      "Meracho"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/33121"
+  },
+  "E3137": {
+    "aliases": [
+      "Mazacuata",
+      "Boa común",
+      "Boa",
+      "Güio",
+      "Tragavenado",
+      "Boa de las vizcacheras",
+      "Lampalagua",
+      "Boa Constrictora"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/32093"
+  },
+  "E3140": {
+    "aliases": [
+      "Nauyaca de árbol pestañuda",
+      "Serpiente Loro",
+      "Víbora de pestañas",
+      "bocaracá"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/30844"
+  },
+  "E3141": {
+    "aliases": [
+      "Terciopelo",
+      "Nauyaca terciopelo real",
+      "Víbora Equis",
+      "Nauyaca",
+      "Talla equis",
+      "Cuatro narices",
+      "Mapaná",
+      "Mahuaquite",
+      "Serpiente Equis",
+      "Palanca",
+      "Nauyaca Real"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/30798"
+  },
+  "E3142": {
+    "aliases": [
+      "Mapaná"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/49001"
+  },
+  "E3147": {
+    "aliases": [
+      "Perezoso de tres dedos",
+      "Perezoso grisaceo",
+      "Perico Ligero",
+      "Pereza",
+      "Perezosos de garganta marrón"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/47067"
+  },
+  "E3148": {
+    "aliases": [
+      "Cacique lomiamarillo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/yercac1?siteLanguage=es"
+  },
+  "E3149": {
+    "aliases": [
+      "Caimán de Anteojos",
+      "Babilla",
+      "Baba"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/116517"
+  },
+  "E3151": {
+    "aliases": [
+      "Tlacuache dorado",
+      "Chucha lanuda dorada",
+      "Zarigüeya lanuda de Derby",
+      "Zorro de balsa",
+      "Tacuazín lanoso"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/42550"
+  },
+  "E3152": {
+    "aliases": [
+      "Picamaderos barbinegro"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/crcwoo1?siteLanguage=es"
+  },
+  "E3158": {
+    "aliases": [
+      "Murciélago cola corta sedosa"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/1577354"
+  },
+  "E3160": {
+    "aliases": [
+      "Murciélago cola corta de Sebas",
+      "Murciélago frutero"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41110"
+  },
+  "E3161": {
+    "aliases": [
+      "Mono Capuchino",
+      "Mono Carablanca",
+      "Mono Cariblanco"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/43432"
+  },
+  "E3162": {
+    "aliases": [
+      "Mono carablanca"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/1369296"
+  },
+  "E3163": {
+    "aliases": [
+      "Murciélago greñudo de saco"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74161"
+  },
+  "E3164": {
+    "aliases": [
+      "Murciélago cara arrugada",
+      "Murciélago de cara arrugada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41017"
+  },
+  "E3171": {
+    "aliases": [
+      "Tlacuache acuático",
+      "Cuica de Agua",
+      "Perrito De Agua",
+      "Raposa De Agua",
+      "Yap",
+      "Zarigüeya de agua",
+      "Zorro de agua",
+      "Tacuazín de agua"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/42700"
+  },
+  "E3172": {
+    "aliases": [
+      "mica café"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/27228"
+  },
+  "E3173": {
+    "aliases": [
+      "Perezoso de dos dedos",
+      "Perezoso",
+      "Perezosos de dos dedos de Hoffmann"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/47101"
+  },
+  "E3179": {
+    "aliases": [
+      "culebra viborera común",
+      "Culebra minadora",
+      "Lisa",
+      "Zopilota común; víbora de sangreInglés: Common mussarana",
+      "Ratonera común"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/27187"
+  },
+  "E3180": {
+    "aliases": [
+      "puercoespín tropical",
+      "Puercoespín mexicano",
+      "puercoespín enano peludo mexicano"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/197791"
+  },
+  "E3182": {
+    "aliases": [
+      "Culebra vientre amarillo"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/27000"
+  },
+  "E3183": {
+    "aliases": [
+      "boa arborícola anillada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/32088"
+  },
+  "E3186": {
+    "aliases": [
+      "Turipache cabeza lisa",
+      "Toloque de cabeza lisa",
+      "perro zompopo"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/83516"
+  },
+  "E3187": {
+    "aliases": [
+      "rana de lluvia de dedos finos"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/65227"
+  },
+  "E3188": {
+    "aliases": [
+      "Ranita Común de Lluvia",
+      "Ranita Rugosa del Pacífico"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/65238"
+  },
+  "E3189": {
+    "aliases": [
+      "Ranita cabezona de hojarasca"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/65255"
+  },
+  "E3190": {
+    "aliases": [
+      "Cocodrilo de Río",
+      "Cocodrilo Americano",
+      "Caiman Aguja",
+      "Caiman de Costa",
+      "Lagarto Amarillo",
+      "Lagarto Real"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/26085"
+  },
+  "E3191": {
+    "aliases": [
+      "Garrapatero mayor"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/greani1?siteLanguage=es"
+  },
+  "E3192": {
+    "aliases": [
+      "Rana esplendida"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/779343"
+  },
+  "E3194": {
+    "aliases": [
+      "Iguana negra de cola espinosa",
+      "Garrobo",
+      "Garrobo Negro"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/35303"
+  },
+  "E3195": {
+    "aliases": [
+      "Tepezcuintle",
+      "Paca",
+      "Tepescuintle",
+      "Boruga",
+      "Lapa",
+      "Guagua",
+      "Guatinaja",
+      "Guanta",
+      "Tacuá",
+      "Majáz"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74257"
+  },
+  "E3196": {
+    "aliases": [
+      "Hormiguero dorado",
+      "Serafín del platanar",
+      "Hormiguero pigmeo de dos dedos"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/930132"
+  },
+  "E3197": {
+    "aliases": [
+      "Dacnis azul"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/bludac1?siteLanguage=es"
+  },
+  "E3199": {
+    "aliases": [
+      "Guaqueque centroamericano",
+      "Agutí centroamericano",
+      "Guatín",
+      "Ñeque",
+      "Agutí rojizo",
+      "Guatuso",
+      "Guatusa centroamericana",
+      "Guatusa",
+      "Sereque",
+      "Cotuza"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/43712"
+  },
+  "E3200": {
+    "aliases": [
+      "Armadillo de nueve bandas",
+      "Mulita grande",
+      "Tatú negro",
+      "Tatú"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/47075"
+  },
+  "E3203": {
+    "aliases": [
+      "rana venenosa verdinegra"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/21121"
+  },
+  "E3205": {
+    "aliases": [
+      "corredora café del bosque sudamericano"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/26609"
+  },
+  "E3206": {
+    "aliases": [
+      "Rana de árbol amarilla",
+      "rana arborícola grillo amarilla",
+      "rana grillo"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/65373"
+  },
+  "E3209": {
+    "aliases": [
+      "Murciélago vampiro",
+      "Vampiro común"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41168"
+  },
+  "E3211": {
+    "aliases": [
+      "rana de campanilla común"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/65418"
+  },
+  "E3213": {
+    "aliases": [
+      "Tlacuache sureño",
+      "Chucha orejinegra",
+      "Zarigüeya",
+      "Fara",
+      "Zarigüeya común de orejas negras",
+      "Zorro Pelón",
+      "Tacuazín común"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/42649"
+  },
+  "E3217": {
+    "aliases": [
+      "culebra indigo",
+      "tilcuate"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/30335"
+  },
+  "E3226": {
+    "aliases": [
+      "Murciélago frutero menor"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74296"
+  },
+  "E3228": {
+    "aliases": [
+      "Ranita túngara",
+      "Tungara",
+      "Sapito De Pustulas",
+      "Rana tungara",
+      "Sapito túngara"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/65448"
+  },
+  "E3230": {
+    "aliases": [
+      "serpiente cabeza blanca"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/30181"
+  },
+  "E3231": {
+    "aliases": [
+      "boa arcoiris café"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/32239"
+  },
+  "E3235": {
+    "aliases": [
+      "coral falsa brillante"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/539674"
+  },
+  "E3239": {
+    "aliases": [
+      "Halcón murcielaguero"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/batfal1?siteLanguage=es"
+  },
+  "E3242": {
+    "aliases": [
+      "serpiente de tierra de hoffman"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/30052"
+  },
+  "E3244": {
+    "aliases": [
+      "Murciélago lengüetón",
+      "Murciélago nectarívoro"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41090"
+  },
+  "E3247": {
+    "aliases": [
+      "Geco de cabeza amarilla",
+      "geco cabeza amarilla",
+      "Salamanqueja azul"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/34580"
+  },
+  "E3249": {
+    "aliases": [
+      "Hormiguero cariblanco"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whcant1?siteLanguage=es"
+  },
+  "E3264": {
+    "aliases": [
+      "Milano bidentado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/dotkit1?siteLanguage=es"
+  },
+  "E3265": {
+    "aliases": [
+      "Colibrí hada occidental"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/pucfai1?siteLanguage=es"
+  },
+  "E3266": {
+    "aliases": [
+      "Besucona asiática",
+      "Cuija besucona asiática",
+      "Geco casero asiático",
+      "lagartija"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/51940"
+  },
+  "E3269": {
+    "aliases": [
+      "Huico centroamericano",
+      "ameiva centroamericana",
+      "Lobito de cola azul",
+      "Chisbala"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/318690"
+  },
+  "E3270": {
+    "aliases": [
+      "Ameiva Delicate",
+      "Ameiva reticulada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/318691"
+  },
+  "E3271": {
+    "aliases": [
+      "ameiva cuatro líneas"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/318694"
+  },
+  "E3274": {
+    "aliases": [
+      "Ranita de cristal norteña",
+      "Ranita de Vidrio",
+      "Rana vientre traslúcido",
+      "Ranita de vientre transparente",
+      "rana de vidrio de fleischmann",
+      "Rana de cristal de San José"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/21324"
+  },
+  "E3275": {
+    "aliases": [
+      "Capibara menor",
+      "Chigüiro menor"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74443"
+  },
+  "E3276": {
+    "aliases": [
+      "Serpiente marina pelágica",
+      "culebra de mar",
+      "serpiente pelágica",
+      "Serpiente marina amarilla"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/35164"
+  },
+  "E3280": {
+    "aliases": [
+      "Iguana verde",
+      "Iguana común",
+      "gallina de palo"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/35342"
+  },
+  "E3281": {
+    "aliases": [
+      "Culebra cordelilla chata",
+      "Cordelilla manchada",
+      "bejuquilla manchada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/29873"
+  },
+  "E3289": {
+    "aliases": [
+      "Murciélago orejón de garganta amarilla"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74469"
+  },
+  "E3290": {
+    "aliases": [
+      "Ocelote",
+      "Gato Onza",
+      "Manigordo",
+      "Ek-such"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41997"
+  },
+  "E3292": {
+    "aliases": [
+      "Geco asiático enlutado"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/104226"
+  },
+  "E3294": {
+    "aliases": [
+      "lagartija nocturna de puntos amarillos"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/39497"
+  },
+  "E3297": {
+    "aliases": [
+      "sapo-rana boliviano",
+      "Rana Terrestre Boliviana"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/22958"
+  },
+  "E3301": {
+    "aliases": [
+      "Culebra ojo de gato bandada",
+      "Serpiente escombrera",
+      "Escombrera",
+      "culebra bandeada con ojos de gato",
+      "Falsa mapanare"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/29718"
+  },
+  "E3304": {
+    "aliases": [
+      "Escombrera manchada",
+      "Culebra ojo de gato norteña o manchada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/29724"
+  },
+  "E3310": {
+    "aliases": [
+      "rana brillante del bosque"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/66019"
+  },
+  "E3314": {
+    "aliases": [
+      "Tangara luctuosa"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whstan1?siteLanguage=es"
+  },
+  "E3329": {
+    "aliases": [
+      "Buco barbón"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/whwpuf1?siteLanguage=es"
+  },
+  "E3332": {
+    "aliases": [
+      "Culebra lagartijera común",
+      "corredora panza rosada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/29404"
+  },
+  "E3333": {
+    "aliases": [
+      "Temazate rojo",
+      "Venado Cabrito",
+      "Venado De Monta",
+      "Venado Temazate",
+      "cabro de monte"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74555"
+  },
+  "E3334": {
+    "aliases": [
+      "Ballena jorobada",
+      "Yubarta",
+      "Gubarte",
+      "Jorobada",
+      "Rorcual Jorobado"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41566"
+  },
+  "E3335": {
+    "aliases": [
+      "Halcón montés collarejo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/coffal1?siteLanguage=es"
+  },
+  "E3337": {
+    "aliases": [
+      "Murciélago orejón brasileño"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41072"
+  },
+  "E3338": {
+    "aliases": [
+      "murciélago orejón brasileño",
+      "Murciélago común de orejas largas",
+      "Murciélago común de orejas negras"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74602"
+  },
+  "E3339": {
+    "aliases": [
+      "Murciélago orejón centroamericano"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41075"
+  },
+  "E3342": {
+    "aliases": [
+      "Rabo de ají",
+      "Coral de cola roja"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/30544"
+  },
+  "E3343": {
+    "aliases": [
+      "Coral panameña"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/30543"
+  },
+  "E3344": {
+    "aliases": [
+      "Coralillo Centroamericana",
+      "Coral centroamericana"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/30531"
+  },
+  "E3346": {
+    "aliases": [
+      "Sinsonte tropical"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/tromoc?siteLanguage=es"
+  },
+  "E3347": {
+    "aliases": [
+      "Murciélago mastín de Coíba",
+      "Murciélago mastín"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/74641"
+  },
+  "E3348": {
+    "aliases": [
+      "Murciélago mastín común",
+      "Murciélago mastín de Pallas",
+      "Murciélago casero",
+      "Murciélago cola de ratón común",
+      "Moloso cola gruesa chico"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41254"
+  },
+  "E3353": {
+    "aliases": [
+      "Bienteveo ventriazufrado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/subfly?siteLanguage=es"
+  },
+  "E3354": {
+    "aliases": [
+      "Bienteveo alicastaño"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/rumfly1?siteLanguage=es"
+  },
+  "E3355": {
+    "aliases": [
+      "Bienteveo sociable"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/socfly1?siteLanguage=es"
+  },
+  "E3356": {
+    "aliases": [
+      "Murcielaguito de vientre blanco"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/40296"
+  },
+  "E3357": {
+    "aliases": [
+      "Murciélago negro",
+      "Murcielaguito oscuro"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/40286"
+  },
+  "E3363": {
+    "aliases": [
+      "Coatí",
+      "Cozumbo",
+      "Coatí norteño",
+      "Pizote",
+      "Tejón",
+      "Chicosolo",
+      "Solitario",
+      "Cholugo",
+      "Gatosolo"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41673"
+  },
+  "E3364": {
+    "aliases": [
+      "Achuni",
+      "Coatí",
+      "Cusumbo",
+      "Cuchucho"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41670"
+  },
+  "E3367": {
+    "aliases": [
+      "culebra manchada de café"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/29291"
+  },
+  "E3368": {
+    "aliases": [
+      "Murciélago-pescador mayor",
+      "Murciélago pescador grande",
+      "Murciélago Pescador Mayor"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41200"
+  },
+  "E3369": {
+    "aliases": [
+      "Buco pechinegro"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/blbpuf1?siteLanguage=es"
+  },
+  "E3371": {
+    "aliases": [
+      "Venado de cola blanca",
+      "Venado cola blanca",
+      "Cariac",
+      "Venado colablanca",
+      "Capasurí",
+      "Ciervo de cola blanca"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/42223"
+  },
+  "E3375": {
+    "aliases": [
+      "Chachalaca cabecigrís"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/grhcha1?siteLanguage=es"
+  },
+  "E3376": {
+    "aliases": [
+      "Cecilia de cabeza amarilla"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/27971"
+  },
+  "E3378": {
+    "aliases": [
+      "Culebra bejuquilla mexicana",
+      "Bejuquilla parda",
+      "Bejuca",
+      "Bejuquilla café"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/83515"
+  },
+  "E3379": {
+    "aliases": [
+      "Culebra bejuquilla verde"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/29178"
+  },
+  "E3380": {
+    "aliases": [
+      "Bejuquilla rayada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/1286331"
+  },
+  "E3381": {
+    "aliases": [
+      "culebra encendida de Cálico",
+      "Coralillo falso",
+      "culebra de flama bosque"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/146320"
+  },
+  "E3383": {
+    "aliases": [
+      "Paloma colorada"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/pavpig2?siteLanguage=es"
+  },
+  "E3384": {
+    "aliases": [
+      "Pecarí de collar",
+      "Javalina",
+      "Saíno",
+      "Cerdo de monte",
+      "Sajino",
+      "Kitán/Kitam"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/42113"
+  },
+  "E3387": {
+    "aliases": [
+      "Pava cojolita"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/cregua1?siteLanguage=es"
+  },
+  "E3388": {
+    "aliases": [
+      "Ermitaño piquilargo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/lobher?siteLanguage=es"
+  },
+  "E3390": {
+    "aliases": [
+      "Culebra Resoplona Norteña",
+      "Mica pajarera",
+      "Granadilla",
+      "Culebra Manchada",
+      "Culebra Pajarera",
+      "Pajarera Arborícola",
+      "Ratonera",
+      "Voladora Arborícola Centroamericana"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/540088"
+  },
+  "E3391": {
+    "aliases": [
+      "Murciélago lanza pálido"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41077"
+  },
+  "E3393": {
+    "aliases": [
+      "Cuco ardilla común"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/squcuc1?siteLanguage=es"
+  },
+  "E3396": {
+    "aliases": [
+      "Murciélago listado de Heller"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41032"
+  },
+  "E3397": {
+    "aliases": [
+      "Lagartija del dosel",
+      "lagarto mono de berthold",
+      "Lagarto de dosel"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/36752"
+  },
+  "E3398": {
+    "aliases": [
+      "Amazilia amable"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/blchum1?siteLanguage=es"
+  },
+  "E3409": {
+    "aliases": [
+      "Cacique cabecicastaño"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/chhoro1?siteLanguage=es"
+  },
+  "E3414": {
+    "aliases": [
+      "Arasarí acollarado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/colara2?siteLanguage=es"
+  },
+  "E3415": {
+    "aliases": [
+      "Lechuzón de anteojos"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/speowl1?siteLanguage=es"
+  },
+  "E3416": {
+    "aliases": [
+      "Tucán piquiverde"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/kebtou1?siteLanguage=es"
+  },
+  "E3417": {
+    "aliases": [
+      "Rata negra"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/44575"
+  },
+  "E3418": {
+    "aliases": [
+      "culebra café adornada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/111617"
+  },
+  "E3419": {
+    "aliases": [
+      "sapo hojarasquero",
+      "Sapo de Truando"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/67078"
+  },
+  "E3420": {
+    "aliases": [
+      "Sapo del Obispo",
+      "Sapo",
+      "Sapo de hojarasca"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/67089"
+  },
+  "E3421": {
+    "aliases": [
+      "Sapo gigante",
+      "Sapo de caña",
+      "Sapo gigante de Veracruz"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/517119"
+  },
+  "E3422": {
+    "aliases": [
+      "Sapo Crestado",
+      "Sapo Común Sudamericano"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/67128"
+  },
+  "E3423": {
+    "aliases": [
+      "Sapo gigante",
+      "Sapo de Caña",
+      "Sapo de la caña",
+      "Sapo común",
+      "Maco Pen Pen"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/553515"
+  },
+  "E3424": {
+    "aliases": [
+      "Tortuga sabanera parda"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/39942"
+  },
+  "E3425": {
+    "aliases": [
+      "murciélago amarillo ala negra"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/40409"
+  },
+  "E3426": {
+    "aliases": [
+      "Murciélago narigón"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41396"
+  },
+  "E3427": {
+    "aliases": [
+      "Caracolero común"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/snakit?siteLanguage=es"
+  },
+  "E3429": {
+    "aliases": [
+      "Murciélago rayado mayor"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41337"
+  },
+  "E3430": {
+    "aliases": [
+      "Tamarín",
+      "Mono Tití"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/43384"
+  },
+  "E3435": {
+    "aliases": [
+      "rana arboricola narizona de boulenger"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/24310"
+  },
+  "E3436": {
+    "aliases": [
+      "Ardilla de cola roja",
+      "Ardilla colorada",
+      "Ardilla común",
+      "Ardilla roja"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/46010"
+  },
+  "E3441": {
+    "aliases": [
+      "Reinita atigrada"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/camwar?siteLanguage=es"
+  },
+  "E3442": {
+    "aliases": [
+      "rana brincador de bajura",
+      "rana cohete de selvas tropical"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/67185"
+  },
+  "E3443": {
+    "aliases": [
+      "rana cohete de boquete"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/67186"
+  },
+  "E3445": {
+    "aliases": [
+      "rana arborícola enmascarada",
+      "Rana bueyera"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/24272"
+  },
+  "E3446": {
+    "aliases": [
+      "rana arborícola ñata"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/24275"
+  },
+  "E3451": {
+    "aliases": [
+      "Serpiente tigre",
+      "Culebra ratonera mica",
+      "Culebra voladora",
+      "Culebra toche",
+      "Culebra tigre",
+      "Pitorá",
+      "Culebra ratonera amarilla",
+      "Serpiente toche",
+      "Serpiente voladora",
+      "Serpiente chichicúa",
+      "Mica real",
+      "Suchil",
+      "Mica Tigre"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/28627"
+  },
+  "E3454": {
+    "aliases": [
+      "Delfín moteado"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41500"
+  },
+  "E3464": {
+    "aliases": [
+      "Golondrina de manglar"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/manswa1?siteLanguage=es"
+  },
+  "E3465": {
+    "aliases": [
+      "Tamandúa norteño",
+      "Oso hormiguero",
+      "Oso mielero",
+      "Tamandúa",
+      "Brazofuerte",
+      "Brazo fuerte"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/47105"
+  },
+  "E3466": {
+    "aliases": [
+      "Tamandúa",
+      "Oso melero",
+      "Tamanduá",
+      "Tamandúa amazonico"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/47104"
+  },
+  "E3467": {
+    "aliases": [
+      "Culebrita de collar de Barbour"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/28526"
+  },
+  "E3468": {
+    "aliases": [
+      "Culebrita de collar centroamericana"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/28521"
+  },
+  "E3469": {
+    "aliases": [
+      "Tapir Centroamericano",
+      "Anteburro",
+      "Danta",
+      "Macho de monte"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/43355"
+  },
+  "E3470": {
+    "aliases": [
+      "Pecarí de labios blancos",
+      "Cariblanco",
+      "Chancho de monte",
+      "Marín",
+      "Tamborcillo",
+      "pecarí labiado",
+      "Huangana"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/42115"
+  },
+  "E3471": {
+    "aliases": [
+      "Rana de cristal de Espinosa"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/21279"
+  },
+  "E3475": {
+    "aliases": [
+      "Zafiro coronado"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/crowoo1?siteLanguage=es"
+  },
+  "E3476": {
+    "aliases": [
+      "Batará pizarroso occidental"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/wesant1?siteLanguage=es"
+  },
+  "E3477": {
+    "aliases": [
+      "Geco cola de nabo"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/67967"
+  },
+  "E3479": {
+    "aliases": [
+      "Avetigre colorada"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/ruther1?siteLanguage=es"
+  },
+  "E3480": {
+    "aliases": [
+      "Tinamú oliváceo"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/gretin1?siteLanguage=es"
+  },
+  "E3492": {
+    "aliases": [
+      "murciélago de orejas grandes"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/75212"
+  },
+  "E3493": {
+    "aliases": [
+      "Trogón grande"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/slttro1?siteLanguage=es"
+  },
+  "E3494": {
+    "aliases": [
+      "Trogón amarillo esmeralda"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/bkttro6?siteLanguage=es"
+  },
+  "E3495": {
+    "aliases": [
+      "Delfín mular",
+      "Delfín nariz de botella",
+      "Tonina"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41482"
+  },
+  "E3500": {
+    "aliases": [
+      "murciélago acampador pálido"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41154"
+  },
+  "E3502": {
+    "aliases": [
+      "Murciélago oreja amarilla menor",
+      "Murciélago de orejas amarillas"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41022"
+  },
+  "E3503": {
+    "aliases": [
+      "Murcielaguito norteño de orejas amarillas"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/75219"
+  },
+  "E3504": {
+    "aliases": [
+      "murciélago cara rayada"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41038"
+  },
+  "E3505": {
+    "aliases": [
+      "Falso vampiro"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/41160"
+  },
+  "E3506": {
+    "aliases": [
+      "Sorda de tierra",
+      "culebra engañosa norteña",
+      "Falsa nauyaca",
+      "falsa terciopelo"
+    ],
+    "label": "iNaturalist",
+    "url": "https://www.inaturalist.org/taxa/28031"
+  },
+  "PAN001": {
+    "aliases": [
+      "Arpía mayor"
+    ],
+    "label": "eBird",
+    "url": "https://ebird.org/species/hareag1?siteLanguage=es"
+  }
+}

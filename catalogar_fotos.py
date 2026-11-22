@@ -37,7 +37,7 @@ def fetch(url, image=False):
             time.sleep(wait)
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=18) as response:
-                content = response.read(196608 if image else 1500000)
+                content = response.read(196608 if image else 12000000)
                 return content, response.geturl(), response.headers.get("Content-Type", "")
         except urllib.error.HTTPError as error:
             if error.code in {429, 503} and attempt == 0:
@@ -50,6 +50,16 @@ def fetch(url, image=False):
 
 
 def dimensions(data):
+    if data[:4] == b'RIFF' and data[8:12] == b'WEBP':
+        kind = data[12:16]
+        if kind == b'VP8X':
+            return int.from_bytes(data[24:27], 'little') + 1, int.from_bytes(data[27:30], 'little') + 1
+        if kind == b'VP8 ' and data[23:26] == b'\x9d\x01\x2a':
+            width, height = struct.unpack('<HH', data[26:30])
+            return width & 0x3fff, height & 0x3fff
+        if kind == b'VP8L' and data[20] == 0x2f:
+            packed = int.from_bytes(data[21:25], 'little')
+            return (packed & 0x3fff) + 1, ((packed >> 14) & 0x3fff) + 1
     if data.startswith(b"\x89PNG\r\n\x1a\n"):
         return struct.unpack(">II", data[16:24])
     if data.startswith(b"\xff\xd8"):
@@ -112,9 +122,6 @@ def stri_photo(species, taxon_ids):
                 errors.append("Imagen sin identificación exacta o de tipo no fotográfico")
                 continue
             url = urllib.parse.urljoin(source, attrs.get("src", ""))
-            if not re.search(r'\.(jpg|jpeg|png)(?:\?|$)', url, re.I):
-                errors.append("Formato fotográfico no confirmado")
-                continue
             creator = re.search(r'<div class="creator">(.*?)</div>', block.group(1), re.S)
             author = (plain(creator.group(1)) if creator else "") or "Autor no indicado por STRI"
             final, width, height = check_image(url)

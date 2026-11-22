@@ -1,38 +1,42 @@
-# Contexto de EcoAvista para continuar el trabajo
+# Continuidad de EcoAvista
 
-## Alcance y arquitectura
+## Arquitectura y límites
 
-Aplicación educativa Flask, sqlite3, SQLite, Jinja, HTML, CSS y JavaScript. Leaflet 1.9.4 y teselas OpenStreetMap requieren Internet. Conserva la paleta y los componentes de static/css/style.css. No agregar APIs, actualizaciones automáticas ni dependencias para los datos.
+Flask + sqlite3 + Jinja + Leaflet. Conservar static/css/style.css, componentes y dependencias. Revisar Git y preservar cambios locales. No hacer commit ni push sin instrucción.
 
-## Datos actuales
+Los datos estáticos contienen 3.512 especies, 85 áreas protegidas, registros de inventarios, publicaciones y observaciones públicas con sus fuentes. Los inventarios de cuatro sitios se complementan con publicaciones y observaciones públicas enlazadas a GBIF. Una relación no representa un avistamiento ni permite estimar su probabilidad. Las áreas sin checklist siguen formando parte del catálogo geográfico.
 
-Los CSV estáticos contienen 3.507 especies (2.976 flora y 531 fauna), 85 áreas protegidas, 4.984 relaciones de checklist por fuente y 19 fuentes. Hay seis grupos: plantas, aves, anfibios, peces, mamíferos y reptiles. No es un inventario completo de la biodiversidad de Panamá.
-Los checklists seleccionados corresponden a Altos de Campana, Soberanía, Barro Colorado y Coiba.
-83 coordenadas son centroides aproximados derivados de geometrías oficiales MiAMBIENTE y dos son referencias de localidad publicadas por STRI. Ningún punto representa entrada de parque ni posición individual de especie.
-La conservación es nacional, basada en la Resolución DM-0657-2016: los valores vacíos muestran “Sin dato confirmado”. No usar categorías globales UICN ni inferir ausencia de amenaza.
-data/imagenes_especies.csv tiene 3.507 filas: dos fotografías verificadas (Anacardium occidentale y Dendrobates auratus) y 3.505 ilustraciones referenciales de seis grupos. Archivos activos en static/img/especies/. Las fotos de especies no documentan avistamientos en Panamá.
-data/imagenes_lugares.csv tiene 85 filas: fotografía identificada de Coiba (dronepicr, CC BY 2.0) y 84 mapas de área. Las 85 áreas tienen un mapa propio como respaldo. Geometrías estáticas simplificadas en data/geometrias_lugares.json, EPSG:32617, vinculadas por objectid_1 a id_miambiente y comprobadas por nombre. No usar las miniaturas para navegación o delimitación legal. La capa no declara licencia específica; conservar fuente y atribución.
+83 coordenadas son centroides aproximados de MiAMBIENTE y dos son referencias de localidad STRI. No señalan entradas ni ubicaciones individuales de especies. Google Maps abre una búsqueda por nombre y categoría del área; el visitante debe comprobar el destino y el acceso.
 
-## Implementación
+La conservación nacional corresponde a la Resolución DM-0657-2016; las categorías desconocidas se explican únicamente en las fichas. Los nombres comunes documentados encabezan las fichas y tarjetas.
 
-- init_db.py importa UTF-8 con BOM opcional, migra el esquema y sincroniza los cuatro CSV y el registro de imágenes mediante UPSERT y eliminación de registros ausentes.
-- especies_lugares usa clave (id_especie, id_lugar, fuente_id). La migración copia los registros existentes antes de retirar la tabla anterior; la importación restaura las relaciones que la clave antigua colapsaba.
-- imagenes_especies e imagenes_lugares usan el ID de su registro como clave; init_db.py valida cobertura completa, rutas locales y sincroniza ambos CSV. Migra el registro antiguo de dos fotos.
-- app.py conserva consultas parametrizadas, filtros combinables de nombre, flora/fauna, grupo, estado nacional y lugar. Inicio muestra especies con fotografía verificada.
-- visuales.py produce SVG de grupo y de área; preparar_visuales.py regenera archivos y registros visuales sin descargas. templates/_species_visual.html comparte imágenes, etiquetas y créditos. Flask detecta archivos faltantes y ofrece el SVG incrustado. static/js/visuales.js sustituye imágenes fallidas y actualiza su etiqueta y atribución. El respaldo de especie dice “Ilustración referencial”; el de lugar “Mapa del área”.
-- /mapa filtra lugares por EXISTS para no duplicar marcadores por fuente; ajusta todos los puntos y conserva lista HTML aun sin Leaflet o teselas. Verde: centroide; azul: STRI. No hay filtro de acceso.
-- /lugares distingue áreas con checklist de las demás mediante conteo de especies distintas.
+La cobertura visual es del 100 % para las 3.512 especies y los 85 lugares. Los CSV de imágenes mantienen una fila por registro. Las fotos específicas tienen prioridad; las referencias locales completan los registros restantes. tipo_visual distingue fotografia y referencia. nombre_confirmado identifica el sujeto realmente fotografiado, que puede diferir del registro para referencias. No interpretar estado=verificada como prueba de que una imagen referencial identifica la especie de la ficha o se tomó en el lugar. Fuente, autor y licencia se conservan en ambas clases. El desglose está en data/cobertura_fotografias.json y las referencias se enumeran en data/fotografias_referenciales.csv.
 
-## Ejecución
+El mapa combina filtros de especie, grupo taxonómico, categoría de manejo, checklist, provincia o comarca y tipo de coordenada. Los grupos filtran relaciones documentadas, no todas las áreas donde podría vivir una especie. Las regiones se derivan del cruce con cartografía oficial; la propiedad pública o privada no se infiere.
 
-Desde la raíz del repositorio, activa .venv y ejecuta:
+## Carga y mantenimiento
+
+`python init_db.py` importa UTF-8, migra la clave triple de especies_lugares y sincroniza los cuatro CSV base y ambos registros de imágenes. `python exportar_fotografias.py` consolida las auditorías de fotos y genera cobertura y pendientes. La investigación es independiente de la navegación. Los procesos por lotes escriben JSONL incrementalmente: exportar e inicializar otra vez para incorporar nuevas verificaciones.
+
+No ejecutar preparar_visuales.py: es un generador anterior de ilustraciones que sobrescribiría los registros fotográficos. La integración activa usa fotos reales, incluidas referencias de grupos y paisajes conforme al nuevo alcance. Las referencias siempre llevan etiqueta y no se presentan como identificaciones exactas. Los archivos originales de la etapa anterior permanecen fuera de la integración activa.
+
+## Ejecutar
+
 ```powershell
 python init_db.py
 python -m flask --app app run
 ```
-Abre http://127.0.0.1:5000. La base instance/ecoavista.db se genera localmente y no se versiona.
-Revisa git status antes de editar, conserva cambios locales, no hagas push ni borres la base. Los cambios del usuario en lugares.csv y fuentes.csv se conservaron.
 
-## Comprobación
+http://127.0.0.1:5000. Validar Inicio, Catálogo, fichas de especie y lugar, Lugares, Mapa y Nosotros con el cliente Flask; comprobar 4.984 relaciones y PRAGMA foreign_key_check tras repetir la carga.
 
-Se repitió init_db.py: 3.507 especies, 85 lugares, 4.984 relaciones, 19 fuentes, 3.507 registros visuales de especies y 85 de lugares; sin errores de claves foráneas. Se comprobó cobertura completa de ambos registros y los 94 archivos activos distintos (tres JPEG, seis SVG de grupo y 85 SVG de área), incluyendo los respaldos. El cliente Flask confirmó respuestas 200 de Inicio, Catálogo, fichas con fotos y referencias, Lugares, Mapa y Nosotros, con 3.507 imágenes en el catálogo y 85 en Lugares. Se simuló la ausencia de archivos locales para comprobar el respaldo SVG incrustado. No se realizó revisión visual de las páginas en navegador. El mapa interactivo conserva 85 puntos (83 centroides) y depende de Internet para Leaflet y teselas; los recursos visuales y sus respaldos son locales.
+## Ampliación geográfica y navegación
+
+completar_provincias.py cruza las 85 geometrías locales con la capa oficial Provincias_2024 mediante consulta espacial, conserva la evidencia en data/provincias_lugares.jsonl y añade provincias, provincia_fuente_url y provincia_metodo a lugares.csv. init_db.py migra e importa estas columnas. Hay áreas marinas sin intersección y áreas con varias regiones. No interpretar el cruce simplificado como delimitación administrativa certificada. No asignar propiedad privada a todo un humedal porque una reserva privada esté dentro.
+
+Lugares filtra por nombre, región, categoría y checklist; Mapa incorpora región. Especies tiene paginación de 24 resultados y enlaces que conservan filtros. Inicio selecciona un representante por grupo con foto. Las búsquedas adicionales de fotos se registran en fotos_inaturalist.jsonl, fotos_wikidata.jsonl y fotos_areas_wikipedia.jsonl; exportar_fotografias.py las consolida.
+
+## Validación de esta ampliación
+
+Se conservaron los campos originales y las coordenadas de los 85 lugares; solo se añadieron columnas geográficas. La carga repetida conserva 4.984 relaciones sin errores de claves foráneas. Se comprobaron las rutas, filtros, paginación y enfoque del mapa. comprobar_cobertura_visual.py comprueba cada registro, sus respaldos locales, archivos cargables, referencias y puntos del mapa. comprobar_respaldo.js simula una URL fallida y verifica que cambien la foto, la etiqueta y la atribución. No se realizó una comprobación visual completa en navegador.
+
+Las fotos no necesitan haberse tomado en Panamá ni en los lugares asociados. static/img/referencias/ contiene las copias locales y data/referencias_grupos.json y data/referencias_paisajes.json mantienen sus créditos. exportar_fotografias.py completa la cobertura con ellas e init_db.py importa los CSV. En el navegador, una URL fallida cambia al respaldo con su etiqueta y créditos. Las fotos remotas específicas y el mapa base requieren Internet; el respaldo fotográfico es local.

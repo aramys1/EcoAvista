@@ -33,13 +33,36 @@
       link.href = point.url;
       link.textContent = point.name;
       content.appendChild(link);
-      [point.category, point.coordinateType, "No es una entrada ni la ubicación de una especie."].forEach((text) => {
+      if (point.image) {
+        const image = document.createElement("img");
+        image.src = point.image; image.alt = point.name; image.loading = "lazy";
+        image.className = "map-popup-photo";
+        image.dataset.backup = JSON.stringify(point.backup || null);
+        image.onerror = () => ecoPhotoFailed(image);
+        content.appendChild(image);
+        if (point.reference || point.viewLabel) {
+          const caption = document.createElement("p");
+          caption.textContent = point.viewLabel || "Imagen referencial";
+          content.appendChild(caption);
+        }
+      }
+      const count = document.createElement("p");
+      count.textContent = point.count ? point.count + " especies registradas" : "Explora este lugar" ;
+      content.appendChild(count);
+      const maps = document.createElement("a");
+      maps.href = point.maps; maps.target = "_blank"; maps.rel = "noopener";
+      maps.className = "maps-action";
+      maps.textContent = "Abrir en Google Maps ↗";
+      content.appendChild(maps);
+      [point.category, "Ubicación aproximada del área."].forEach((text) => {
         const paragraph = document.createElement("p"); paragraph.textContent = text; content.appendChild(paragraph);
       });
       marker.bindPopup(content);
+      marker.bindTooltip(point.name + " · " + point.category);
       return marker;
     });
     if (markers.length) map.fitBounds(L.featureGroup(markers).getBounds().pad(0.12), { maxZoom: 11 });
+    if (markers.length === 1) markers[0].openPopup();
   } catch (error) {
     warn("No se pudo iniciar el mapa. La lista de lugares permanece disponible más abajo.");
     element.hidden = true;

@@ -1,0 +1,74 @@
+{
+  "PAN001": {
+    "motivo": "Ave nacional",
+    "historia": "En los bosques de Darién, Chagres y Palo Seco vive el águila que representa a Panamá. Sus crías pasan meses aprendiendo a volar. Para conocerla, empieza por los lugares donde MiAMBIENTE ha documentado su presencia.",
+    "fuente": "F20",
+    "aliases": [
+      "aguila arpia",
+      "harpy eagle",
+      "ave nacional"
+    ]
+  },
+  "E2120": {
+    "motivo": "Flor nacional",
+    "historia": "La flor del Espíritu Santo es una orquídea. En Las Minas, Herrera, le dedican un festival y la reserva forestal El Montuoso protege uno de los lugares donde crece.",
+    "fuente": "F27",
+    "aliases": [
+      "orquidea espiritu santo",
+      "flor nacional"
+    ]
+  },
+  "PAN002": {
+    "motivo": "Solo en Panamá",
+    "endemica": true,
+    "historia": "Su color amarillo la ha convertido en una de las ranas más reconocibles del país. Panamá cuenta con programas de cría para conservarla. Conocer esos proyectos es una forma de descubrirla sin buscar ejemplares silvestres.",
+    "fuente": "F22",
+    "aliases": [
+      "rana de oro",
+      "rana dorada"
+    ]
+  },
+  "E3146": {
+    "motivo": "Solo en Escudo de Veraguas",
+    "endemica": true,
+    "historia": "Este pequeño perezoso de tres dedos vive en una sola isla del Caribe panameño. Escudo de Veraguas es todo su hogar conocido en el mundo.",
+    "fuente": "F23",
+    "aliases": [
+      "perezoso enano",
+      "perezoso de tres dedos"
+    ]
+  },
+  "E1129": {
+    "motivo": "Anida en Isla Iguana",
+    "historia": "La fragata magnífica, conocida en Pedasí como tijereta, anida en Isla Iguana. Los investigadores del golfo de Panamá identificaron allí una de sus grandes colonias.",
+    "fuente": "F25",
+    "aliases": [
+      "tijereta",
+      "fragata"
+    ]
+  },
+  "PAN003": {
+    "motivo": "Anida en las playas de Tonosí",
+    "historia": "La tortuga lora, también llamada golfina, vuelve a playas como La Marinera e Isla de Cañas para poner sus huevos. En una arribada, muchas hembras llegan a la playa durante el mismo periodo.",
+    "fuente": "F31",
+    "aliases": [
+      "tortuga golfina"
+    ]
+  },
+  "PAN004": {
+    "motivo": "Ave del bosque de montaña",
+    "historia": "El sendero Los Quetzales, en el volcán Barú, lleva el nombre de esta ave. Comparte el bosque de montaña con colibríes y orquídeas.",
+    "fuente": "F32",
+    "aliases": [
+      "quetzal"
+    ]
+  },
+  "PAN005": {
+    "motivo": "El mayor felino de Panamá",
+    "historia": "El jaguar es el más grande de los felinos silvestres del país. En Panamá, científicos y comunidades trabajan juntos para estudiarlo y conservar los bosques por los que se desplaza.",
+    "fuente": "F33",
+    "aliases": [
+      "tigre americano"
+    ]
+  }
+}

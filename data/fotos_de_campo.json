@@ -1,0 +1,227 @@
+{
+  "L_MA_006": {
+    "archivo": "img/lugares/l_ma_006_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/272832026",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/490852177/large.jpeg",
+    "nombre": "Bradypus variegatus",
+    "autor": "(c) Luis Garrido, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2025-04-12"
+  },
+  "L_MA_022": {
+    "archivo": "img/lugares/l_ma_022_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/200073060",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/352924434/large.jpg",
+    "nombre": "Creagrus furcatus",
+    "autor": "(c) Debra Baker, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2020-07-07"
+  },
+  "L_MA_007": {
+    "archivo": "img/lugares/l_ma_007_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/38118398",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/60537305/large.jpg",
+    "nombre": "Himantopus mexicanus",
+    "autor": "(c) Aitor, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2020-01-30"
+  },
+  "L_MA_019": {
+    "archivo": "img/lugares/l_ma_019_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/318042099",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/574761661/large.jpg",
+    "nombre": "Ocypode gaudichaudii",
+    "autor": "(c) STEVEN PEREZ, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2025-09-14"
+  },
+  "L_MA_023": {
+    "archivo": "img/lugares/l_ma_023_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/144344536",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/247720344/large.jpg",
+    "nombre": "Boana platanera",
+    "autor": "(c) brendanboyd, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2020-02-21"
+  },
+  "L_MA_014": {
+    "archivo": "img/lugares/l_ma_014_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/165493914",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/286480243/large.jpg",
+    "nombre": "Sula brewsteri",
+    "autor": "(c) Aitor, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2023-06-03"
+  },
+  "L_MA_026": {
+    "archivo": "img/lugares/l_ma_026_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/166490557",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/288317239/large.jpg",
+    "nombre": "Mycteria americana",
+    "autor": "(c) Aitor, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2023-06-09"
+  },
+  "L_MA_031": {
+    "archivo": "img/lugares/l_ma_031_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/193058736",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/339063046/large.jpeg",
+    "nombre": "Arenaeus mexicanus",
+    "autor": "(c) Jean Jacques Godon, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2019-07-18"
+  },
+  "L_MA_036": {
+    "archivo": "img/lugares/l_ma_036_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/316210776",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/571294558/large.jpg",
+    "nombre": "Herpothallon rubrocinctum",
+    "autor": "(c) Cole Wolf, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2025-09-21"
+  },
+  "L_MA_074": {
+    "archivo": "img/lugares/l_ma_074_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/164726618",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/285045112/large.jpeg",
+    "nombre": "Dasypus fenestratus",
+    "autor": "(c) James Tetreau, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2023-05-09"
+  },
+  "L_MA_028": {
+    "archivo": "img/lugares/l_ma_028_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/37215449",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/58960902/large.jpg",
+    "nombre": "Hylesia umbratula",
+    "autor": "no rights reserved",
+    "licencia": "CC0",
+    "fecha": "2019-12-24"
+  },
+  "L_MA_078": {
+    "archivo": "img/lugares/l_ma_078_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/37564124",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/59574014/large.jpg",
+    "nombre": "Rhadinaea calligaster",
+    "autor": "no rights reserved",
+    "licencia": "CC0",
+    "fecha": "2020-01-03"
+  },
+  "L_MA_080": {
+    "archivo": "img/lugares/l_ma_080_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/200645177",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/354030586/large.jpg",
+    "nombre": "Ardea herodias",
+    "autor": "(c) Kalvin Chan, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2024-02-15"
+  },
+  "L_MA_033": {
+    "archivo": "img/lugares/l_ma_033_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/197865307",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/348602547/large.jpg",
+    "nombre": "Pandion haliaetus",
+    "autor": "(c) Anthony Batista, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2024-01-28"
+  },
+  "L_MA_041": {
+    "archivo": "img/lugares/l_ma_041_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/85734346",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/141114773/large.png",
+    "nombre": "Sphyraena barracuda",
+    "autor": "(c) Jonathan Eisen, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2018-12-05"
+  },
+  "L_MA_089": {
+    "archivo": "img/lugares/l_ma_089_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/128064807",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/217492970/large.jpeg",
+    "nombre": "Anthurium formosum",
+    "autor": "(c) keesgroenendijk, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2022-07-25"
+  },
+  "L_MA_044": {
+    "archivo": "img/lugares/l_ma_044_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/114946341",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/194045227/large.jpeg",
+    "nombre": "Ancylometes bogotensis",
+    "autor": "(c) juanmartinez18, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2022-02-25"
+  },
+  "L_MA_064": {
+    "archivo": "img/lugares/l_ma_064_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/333651583",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/605735289/large.jpg",
+    "nombre": "Sphacelodes vulneraria",
+    "autor": "(c) Louis Imbeau, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2025-12-28"
+  },
+  "L_MA_046": {
+    "archivo": "img/lugares/l_ma_046_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/337980235",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/614528090/large.jpg",
+    "nombre": "Nannopterum brasilianum",
+    "autor": "(c) Anthony Batista, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2026-02-04"
+  },
+  "L002": {
+    "archivo": "img/lugares/l002_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/146360119",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/251609745/large.jpeg",
+    "nombre": "Ptocadica bifasciata",
+    "autor": "(c) Kai Squires, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2023-01-11"
+  },
+  "L_MA_052": {
+    "archivo": "img/lugares/l_ma_052_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/265753021",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/477402119/large.jpg",
+    "nombre": "Astrocaryum standleyanum",
+    "autor": "no rights reserved",
+    "licencia": "CC0",
+    "fecha": "2025-03-17"
+  },
+  "L_MA_060": {
+    "archivo": "img/lugares/l_ma_060_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/140453437",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/240423560/large.jpeg",
+    "nombre": "Pteroglossus torquatus",
+    "autor": "no rights reserved",
+    "licencia": "CC0",
+    "fecha": "2022-10-22"
+  },
+  "L_MA_068": {
+    "archivo": "img/lugares/l_ma_068_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/333667577",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/605760563/large.jpg",
+    "nombre": "Xiphorhynchus susurrans",
+    "autor": "(c) Anthony Batista, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2026-01-03"
+  },
+  "L_MA_069": {
+    "archivo": "img/lugares/l_ma_069_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/360639972",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/658080440/large.jpg",
+    "nombre": "Heliothryx barroti",
+    "autor": "(c) Anthony Batista, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2026-05-09"
+  },
+  "L_MA_085": {
+    "archivo": "img/lugares/l_ma_085_campo.jpg",
+    "fuente_url": "https://www.inaturalist.org/observations/268669758",
+    "imagen_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/482965102/large.jpeg",
+    "nombre": "Coereba flaveola",
+    "autor": "(c) froggymum, some rights reserved (CC BY)",
+    "licencia": "CC-BY",
+    "fecha": "2025-04-04"
+  }
+}

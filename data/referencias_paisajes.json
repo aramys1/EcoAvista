@@ -1,0 +1,47 @@
+{
+  "bosque": {
+    "id_lugar": "L_MA_027",
+    "nombre": "Paisaje de bosque tropical",
+    "nombre_confirmado": "Paisaje de bosque tropical",
+    "imagen_url": "https://images.panoramix.getaway.nl/media/guide/0002/25/2a0113cd31bdbdda8384430ebef44fe604c162df.jpeg",
+    "fuente_url": "https://www.middenamerika.nl/panama/reisgids/chagres-national-park/",
+    "autor": "Autor no indicado; publicado por MiddenAmerika.nl",
+    "licencia": "Condiciones del proveedor; no se indica licencia abierta",
+    "licencia_url": "",
+    "archivo": "img/referencias/bosque-panoramica.jpg",
+    "estado": "verificada",
+    "fecha_verificacion": "2026-11-17T20:17:45.918315+00:00",
+    "nota": "Looking east toward Camino de Cruces National Park from Ancon, Panama in 2013",
+    "tipo_visual": "fotografia"
+  },
+  "costa": {
+    "id_lugar": "L004",
+    "nombre": "Coiba",
+    "nombre_confirmado": "Coiba",
+    "imagen_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Beach_on_Coiba%2C_Panama_%2826822116145%29.jpg/960px-Beach_on_Coiba%2C_Panama_%2826822116145%29.jpg?utm_campaign=index&utm_content=thumbnail&utm_source=commons.wikimedia.org",
+    "fuente_url": "https://commons.wikimedia.org/wiki/File:Beach_on_Coiba,_Panama_(26822116145).jpg",
+    "autor": "dronepicr",
+    "licencia": "CC BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "archivo": "img/referencias/costa.jpg",
+    "estado": "verificada",
+    "fecha_verificacion": "2026-11-17T20:17:45.940952+00:00",
+    "nota": "Identidad confirmada en la descripcion original de Wikimedia Commons; copia local conservada.",
+    "tipo_visual": "fotografia"
+  },
+  "islas": {
+    "id_lugar": "L_MA_020",
+    "nombre": "Golfo de Chiriquí",
+    "nombre_confirmado": "Golfo de Chiriquí",
+    "imagen_url": "https://miambiente.gob.pa/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-02-at-1.19.47-PM-1024x768.jpeg",
+    "fuente_url": "https://miambiente.gob.pa/parque-nacional-marino-golfo-de-chiriqui-32-anos-resguardando-un-santuario-de-vida-en-el-pacifico-panameno/",
+    "autor": "MiAMBIENTE; fotógrafo no indicado",
+    "licencia": "Condiciones de MiAMBIENTE",
+    "licencia_url": "",
+    "archivo": "img/referencias/islas.jpg",
+    "estado": "verificada",
+    "fecha_verificacion": "2026-11-17T20:17:45.965382+00:00",
+    "nota": "Fotografía del área publicada por MiAMBIENTE y revisada visualmente.",
+    "tipo_visual": "fotografia"
+  }
+}

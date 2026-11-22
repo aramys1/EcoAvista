@@ -1,10 +1,16 @@
 {% extends "base.html" %}
-{% from "_species_visual.html" import visual, pending %}
+{% from "_species_visual.html" import visual %}
 {% block title %}Lugares | EcoAvista{% endblock %}
-{% block hero %}<section class="hero hero-compact"><h1>Áreas protegidas y checklists</h1><p>Explora localidades mencionadas en las fuentes del catálogo.</p><div class="escena" aria-hidden="true"><span class="s arbol">🌳</span><span class="s palma1">🌴</span></div></section>{% endblock %}
+{% block hero %}<section class="hero hero-compact"><h1>Áreas protegidas de Panamá</h1><p>Explora localidades mencionadas en las fuentes del catálogo.</p><div class="escena" aria-hidden="true"><span class="s arbol">🌳</span><span class="s palma1">🌴</span></div></section>{% endblock %}
 {% block content %}
-<h2 class="titulo">{{ places|length }} áreas protegidas · {{ checklist_count }} con checklists</h2>
-{{ pending(place_images, 'lugares') }}
-<p class="notice-line">Los checklists seleccionados corresponden a Altos de Campana, Soberanía, Barro Colorado y Coiba. Las demás áreas no tienen listas de especies en esta carga; eso no indica ausencia de biodiversidad.</p>
-{% if places %}<div class="grid places-grid">{% for place in places %}<a class="card" href="{{ url_for('place_detail', place_id=place.id) }}">{{ visual(place, place_images) }}<span class="tag">{% if place.species_count %}Con checklist · {{ place.species_count }} especies{% else %}Sin checklist en esta carga{% endif %}</span><h3>{{ place.nombre }}</h3><p>{{ place.categoria_manejo or 'Categoría de manejo desconocida' }}</p><p class="muted">{{ coordinate_type(place) }}</p></a>{% endfor %}</div>{% else %}<p class="empty-state">No hay lugares con ese filtro.</p>{% endif %}
+<form class="busqueda species-filters" method="get">
+<label for="q">Buscar área<input id="q" name="q" value="{{ query }}" type="search" placeholder="Nombre del área"></label>
+<label for="provincia">Provincia o comarca<select id="provincia" name="provincia"><option value="">Todas</option>{% for value in provinces %}<option {% if province == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+<label for="manejo">Categoría del área<select id="manejo" name="manejo"><option value="">Todas</option>{% for value in managements %}<option {% if management == value %}selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+<label for="checklist">Especies documentadas<select id="checklist" name="checklist"><option value="">Todas las áreas</option><option value="si" {% if checklist == 'si' %}selected{% endif %}>Con especies registradas</option></select></label>
+<div class="filter-actions"><button class="btn" type="submit">Filtrar</button><a class="btn btn-secondary" href="{{ url_for('places_catalog') }}">Restablecer</a></div>
+</form>
+<h2 class="titulo">{{ places|length }} áreas protegidas · {{ checklist_count }} con especies registradas</h2>
+
+{% if places %}<div class="grid places-grid">{% for place in places %}<a class="card" href="{{ url_for('place_detail', place_id=place.id) }}">{{ visual(place, place_images) }}<span class="tag">{% if place.species_count %}{{ place.species_count }} especies{% else %}Área protegida{% endif %}</span><h3>{{ place.nombre }}</h3><p>{{ place.categoria_manejo or 'Categoría de manejo desconocida' }}</p><p class="muted">{{ (place.provincias or '')|replace(';', ' · ') }}</p></a>{% endfor %}</div>{% else %}<p class="empty-state">No hay lugares con ese filtro.</p>{% endif %}
 {% endblock %}

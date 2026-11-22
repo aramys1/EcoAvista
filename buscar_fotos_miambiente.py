@@ -12,13 +12,13 @@ def normalized(value):
 
 if __name__ == "__main__":
     target = ROOT / "data/candidatas_miambiente.jsonl"
-    done = {json.loads(line)["id_lugar"] for line in target.read_text(encoding="utf-8").splitlines()} if target.exists() else set()
+    done = {row["id_lugar"] for row in map(json.loads, target.read_text(encoding="utf-8").splitlines()) if not row.get('error')} if target.exists() else set()
     with target.open("a", encoding="utf-8") as output:
         for place in read_csv("lugares.csv"):
             if place["id_lugar"] in done:
                 continue
             result = dict(id_lugar=place["id_lugar"], nombre=place["nombre"], candidatas=[])
-            query = urllib.parse.urlencode(dict(search=place["nombre"], per_page=20, _embed=1))
+            query = urllib.parse.urlencode(dict(search=place["nombre"], per_page=10, _embed=1))
             try:
                 posts = json.loads(fetch("https://miambiente.gob.pa/wp-json/wp/v2/posts?" + query)[0])
                 for post in posts:

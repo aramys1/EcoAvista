@@ -84,6 +84,8 @@ CREATE TABLE IF NOT EXISTS imagenes_lugares (
 """
 
 TABLE_MIGRATIONS = {
+    "imagenes_especies": {"tipo_visual": "TEXT"},
+    "imagenes_lugares": {"tipo_visual": "TEXT"},
     "especies": {
         "categoria": "TEXT",
         "rango_taxonomico": "TEXT",
@@ -91,7 +93,7 @@ TABLE_MIGRATIONS = {
         "fuente_nombre_comun_id": "TEXT REFERENCES fuentes(id)",
         "fuente_estado_panama_id": "TEXT REFERENCES fuentes(id)",
     },
-    "lugares": {"id_miambiente": "TEXT"},
+    "lugares": {"id_miambiente": "TEXT", "provincias": "TEXT", "provincia_fuente_url": "TEXT", "provincia_metodo": "TEXT"},
     "especies_lugares": {"taxon_id_stri": "TEXT"},
 }
 
@@ -174,6 +176,7 @@ def initialize_database():
     with sqlite3.connect(DB_PATH) as connection:
         connection.executescript(SCHEMA)
         migrate_tables(connection)
+        connection.execute("CREATE INDEX IF NOT EXISTS especies_por_lugar ON especies_lugares(id_lugar, id_especie)")
         sources = [
             {**row, "id": row["fuente_id"]}
             for row in read_csv("fuentes.csv")
@@ -188,7 +191,7 @@ def initialize_database():
             for coordinate in ("latitud", "longitud"):
                 place[coordinate] = value(row, coordinate)
             places.append(place)
-        relations = read_csv("especies_lugares.csv")
+        relations = read_csv("especies_lugares.csv") + read_csv("observaciones_gbif.csv")
         images = read_csv("imagenes_especies.csv")
         place_images = read_csv("imagenes_lugares.csv")
         for rows, records, key in [(images, species, "id_especie"), (place_images, places, "id_lugar")]:
@@ -200,9 +203,13 @@ def initialize_database():
                     if not path.is_relative_to((ROOT / "static/img").resolve()):
                         raise ValueError(f"Ruta de imagen inválida: {image['archivo']}")
                 if image["estado"] == "verificada":
+                    if image.get('tipo_visual') not in {'fotografia', 'referencia'}:
+                        raise ValueError(f"Tipo de fotografía inválido: {image[key]}")
+                    if image['tipo_visual'] == 'referencia' and (not image.get('archivo') or not (ROOT/'static'/image['archivo']).is_file()):
+                        raise ValueError(f"Referencia local no disponible: {image[key]}")
                     name = "nombre_cientifico" if key == "id_especie" else "nombre"
                     expected = next(r[name] for r in records if r[key] == image[key])
-                    if image.get("nombre_confirmado") != expected or not all(image.get(field) for field in ("imagen_url", "fuente_url", "autor", "fecha_verificacion")):
+                    if (image.get("tipo_visual") != "referencia" and image.get("nombre_confirmado") != expected) or not all(image.get(field) for field in ("imagen_url", "fuente_url", "autor", "fecha_verificacion", "nombre_confirmado")):
                         raise ValueError(f"Fotografía sin verificación completa: {image[key]}")
                     if not image["imagen_url"].startswith(("https://", "http://")):
                         raise ValueError(f"URL de fotografía inválida: {image[key]}")
@@ -223,7 +230,7 @@ def initialize_database():
         import_rows(
             connection,
             "lugares",
-            ["id", "nombre", "nombre_en_checklist", "categoria_manejo", "latitud", "longitud", "precision_ubicacion", "fuente_area_id", "fuente_coordenada_id", "id_miambiente"],
+            ["id", "nombre", "nombre_en_checklist", "categoria_manejo", "latitud", "longitud", "precision_ubicacion", "fuente_area_id", "fuente_coordenada_id", "id_miambiente", "provincias", "provincia_fuente_url", "provincia_metodo"],
             places,
             "id",
         )
@@ -236,12 +243,12 @@ def initialize_database():
         )
         import_rows(
             connection, "imagenes_especies",
-            ["id_especie", "nombre_cientifico", "nombre_confirmado", "imagen_url", "archivo", "estado", "fuente_url", "autor", "licencia", "licencia_url", "nota", "fecha_verificacion"],
+            ["id_especie", "nombre_cientifico", "nombre_confirmado", "imagen_url", "archivo", "estado", "fuente_url", "autor", "licencia", "licencia_url", "nota", "fecha_verificacion", "tipo_visual"],
             images, "id_especie",
         )
         import_rows(
             connection, "imagenes_lugares",
-            ["id_lugar", "nombre", "nombre_confirmado", "imagen_url", "archivo", "estado", "fuente_url", "autor", "licencia", "licencia_url", "nota", "fecha_verificacion"],
+            ["id_lugar", "nombre", "nombre_confirmado", "imagen_url", "archivo", "estado", "fuente_url", "autor", "licencia", "licencia_url", "nota", "fecha_verificacion", "tipo_visual"],
             place_images, "id_lugar",
         )
         legacy_columns = {

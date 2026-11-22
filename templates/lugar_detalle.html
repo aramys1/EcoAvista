@@ -1,13 +1,50 @@
 {% extends "base.html" %}
-{% from "_species_visual.html" import visual, credit %}
+{% import "_field_guide.html" as ui %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/fichas.css') }}">{% endblock %}
 {% block title %}{{ place.nombre }} | EcoAvista{% endblock %}
-{% block hero %}<section class="hero hero-compact"><p class="eyebrow">Ficha de lugar</p><h1>{{ place.nombre }}</h1><p>{{ place.categoria_manejo or 'Categoría de manejo desconocida' }}</p><div class="escena" aria-hidden="true"><span class="s arbol">🌳</span><span class="s palma1">🌴</span></div></section>{% endblock %}
 {% block content %}
-<a class="back-link" href="{{ url_for('places_catalog') }}">← Volver a lugares</a>
-<section class="detail-layout"><div class="detail-main"><h2 class="titulo">Datos disponibles</h2><dl class="detail-list"><div><dt>Categoría de manejo</dt><dd>{{ place.categoria_manejo or 'Desconocida' }}</dd></div><div><dt>Acceso</dt><dd>Desconocido; no está confirmado en las fuentes cargadas.</dd></div><div><dt>Nombre en el checklist</dt><dd>{{ place.nombre_en_checklist or 'Desconocido' }}</dd></div><div><dt>Tipo de coordenada</dt><dd>{{ coordinate_type(place) }}</dd></div><div><dt>Precisión de ubicación</dt><dd>{{ place.precision_ubicacion or 'Desconocida' }}</dd></div>{% if place.latitud is not none and place.longitud is not none %}<div><dt>Coordenadas</dt><dd>{{ '%.5f'|format(place.latitud) }}, {{ '%.5f'|format(place.longitud) }}</dd></div>{% endif %}</dl>
-{% if place.area_fuente_titulo %}<div class="caja"><h2>Fuente del área</h2><p><a href="{{ place.area_fuente_url }}" target="_blank" rel="noopener">{{ place.area_fuente_titulo }}</a></p>{% if place.area_fuente_nota %}<p>{{ place.area_fuente_nota }}</p>{% endif %}</div>{% endif %}
-{% if place.coord_fuente_titulo %}<div class="caja"><h2>Fuente de coordenadas</h2><p><a href="{{ place.coord_fuente_url }}" target="_blank" rel="noopener">{{ place.coord_fuente_titulo }}</a></p>{% if place.coord_fuente_nota %}<p>{{ place.coord_fuente_nota }}</p>{% endif %}</div>{% endif %}
-<h2 class="titulo">Especies relacionadas</h2>
-{% if species %}<ul class="related-list">{% for item in species %}<li><div><a href="{{ url_for('species_detail', species_id=item.id) }}"><strong>{{ item.nombre_comun_es or item.nombre_cientifico }}</strong></a><p><i>{{ item.nombre_cientifico }}</i> · {{ item.categoria or 'Categoría sin dato' }}</p><p>Incluida en el checklist de este lugar. {{ item.nota_relacion }}</p>{% if item.fuente_titulo %}<p class="source-line">Fuente: <a href="{{ item.fuente_url }}" target="_blank" rel="noopener">{{ item.fuente_titulo }}</a></p>{% endif %}</div><span class="tag">Checklist local</span></li>{% endfor %}</ul>{% else %}<p>No hay especies relacionadas en los datos cargados.</p>{% endif %}</div>
-<aside class="detail-aside">{{ visual(place, place_images, true) }}{{ credit(place_images.get(place.id)) }}<p class="muted">{% if place.latitud is not none and place.longitud is not none %}{{ coordinate_type(place) }}. No señala la entrada del área ni la ubicación de una especie.{% else %}Esta carga no incluye coordenadas para el lugar.{% endif %}</p>{% if place.latitud is not none and place.longitud is not none %}<a class="btn" href="{{ url_for('map_page') }}">Ver en el mapa</a>{% endif %}</aside></section>
+{% set records = species|rejectattr('tipo_relacion', 'equalto', 'observacion_publica')|unique(attribute='id')|list %}
+{% set reports = species|selectattr('tipo_relacion', 'equalto', 'observacion_publica')|list %}
+{% set total = species|unique(attribute='id')|list|length %}
+<div class="field-guide">
+  <a class="field-back" href="{{ url_for('places_catalog') }}">← Áreas protegidas</a>
+  <section class="field-cover">
+    <div class="field-intro">
+      <p class="field-kicker">{{ ui.icon('compass') }} {{ place.categoria_manejo }}</p>
+      <h1>{{ place.nombre }}</h1>
+      {% if place.provincias %}<p class="field-region">{{ ui.icon('pin') }} {{ place.provincias|replace(';', ' · ') }}</p>{% endif %}
+      {% if intro %}<p>{{ intro }}</p>{% endif %}
+      <div class="field-actions">{{ ui.action('Abrir en Google Maps', google_maps(place), 'pin', true, true) }}{{ ui.action('Ver mapa del área', url_for('map_page', area=place.id), 'compass') }}</div>
+      <small class="field-caption">El punto marca la zona. Confirma la entrada antes de viajar.</small>
+    </div>
+    {% if field_photo %}
+    <div class="field-gallery">
+      <input id="view-field" type="radio" name="vista" checked><label for="view-field">{{ ui.icon('camera') }} Foto de campo</label>
+      <input id="view-area" type="radio" name="vista"><label for="view-area">{{ ui.icon('compass') }} Vista del área</label>
+      <figure class="on-site field-photo"><img class="local-shot" src="{{ url_for('static',filename=field_photo.archivo) }}" alt="{{ field_photo.nombre }} en {{ place.nombre }}" width="960" height="640">
+        <figcaption class="photo-credit"><strong>Fotografiada en {{ place.nombre }} · <i>{{ field_photo.nombre }}</i></strong><br>{{ field_photo.autor }} · <a href="{{ field_photo.fuente_url }}" target="_blank" rel="noopener">Registro y licencia ↗</a>{% if field_photo.fecha %} · {{ field_photo.fecha }}{% endif %}</figcaption>
+      </figure>
+      <div class="from-above">{{ ui.photo(place, place_images) }}</div>
+    </div>
+    {% else %}{{ ui.photo(place, place_images) }}{% endif %}
+  </section>
+  {% if records %}<section class="field-section"><h2>{{ ui.icon('leaf') }} Especies documentadas</h2>
+    <p>Los estudios y publicaciones sobre {{ place.nombre }} incluyen estas especies.</p>
+    <div class="field-grid">{% for item in records[:6] %}{{ ui.card(item, images, url_for('species_detail', species_id=item.id), item.nombre_comun_es or item.nombre_cientifico, item.grupo_taxonomico, item.fuente_url, 'Consultar publicación') }}{% endfor %}</div>
+  </section>{% endif %}
+  {% if reports %}<section class="field-section"><h2>{{ ui.icon('camera') }} Observaciones de campo</h2>
+    <p>Visitantes y naturalistas han compartido estos registros en GBIF. Abre una observación para ver la fecha y el autor. EcoAvista no la ha validado de forma independiente.</p>
+    <div class="field-grid">{% for item in reports[:6] %}{{ ui.card(item, images, url_for('species_detail', species_id=item.id), item.nombre_comun_es or item.nombre_cientifico, item.grupo_taxonomico, item.nota_relacion, 'Ver observación') }}{% endfor %}</div>
+    {% if reports|length > 6 %}<details class="field-more"><summary>Ver {{ reports|length - 6 }} observaciones más</summary><div class="field-grid">{% for item in reports[6:] %}{{ ui.card(item, images, url_for('species_detail', species_id=item.id), item.nombre_comun_es or item.nombre_cientifico, item.grupo_taxonomico, item.nota_relacion, 'Ver observación') }}{% endfor %}</div></details>{% endif %}
+  </section>{% endif %}
+  {% if total %}{{ ui.action('Explorar el catálogo del lugar (' ~ total ~ ')', url_for('species_catalog', lugar=place.id), 'leaf', primary=true) }}
+  {% else %}<section class="field-section"><h2>{{ ui.icon('leaf') }} Fauna y flora</h2><p>Estamos reuniendo registros para este lugar.</p>{{ ui.action('Explorar otras áreas de la región', url_for('places_catalog', provincia=(place.provincias or '').split(';')[0], checklist='si'), 'compass') }}</section>{% endif %}
+  <details class="field-technical"><summary>{{ ui.icon('compass') }} Coordenadas, cartografía y fuentes</summary>
+    <dl class="field-facts">{% if place.latitud is not none and place.longitud is not none %}{{ ui.fact('Latitud', '%.6f°'|format(place.latitud)) }}{{ ui.fact('Longitud', '%.6f°'|format(place.longitud)) }}{% endif %}{{ ui.fact('Tipo de coordenada', coordinate_type(place)) }}{{ ui.fact('Categoría de manejo', place.categoria_manejo) }}{{ ui.fact('Nombre en el inventario', place.nombre_en_checklist) }}{{ ui.fact('Identificador de MiAMBIENTE', place.id_miambiente) }}</dl>
+    <p>{{ place.precision_ubicacion }}</p>{% if place.provincia_metodo %}<p>{{ place.provincia_metodo }}</p>{% endif %}
+    <div class="field-actions">{% if place.area_fuente_url %}{{ ui.action(place.area_fuente_titulo,place.area_fuente_url,'compass',true) }}{% endif %}{% if place.coord_fuente_url and place.coord_fuente_url != place.area_fuente_url %}{{ ui.action(place.coord_fuente_titulo, place.coord_fuente_url,'pin',true) }}{% endif %}{% if place.provincia_fuente_url %}{{ ui.action('Límites de provincias y comarcas',place.provincia_fuente_url,'compass',true) }}{% endif %}{% if local_source %}{{ ui.action(local_source.titulo,local_source.url,'book',true) }}{% endif %}</div>
+    {% if place.area_fuente_nota %}<p>{{ place.area_fuente_nota }}</p>{% endif %}{% if place.coord_fuente_nota and place.coord_fuente_nota != place.area_fuente_nota %}<p>{{ place.coord_fuente_nota }}</p>{% endif %}
+  </details>
+  <details class="field-technical"><summary>{{ ui.icon('book') }} Leyes y resoluciones</summary><div class="field-actions">{% for label, href in leyes %}{{ ui.action(label, href, 'book', true) }}{% endfor %}{% if marco_legal %}{{ ui.action(marco_legal.titulo, marco_legal.url, 'book', true) }}{% endif %}</div></details>
+</div>
 {% endblock %}
